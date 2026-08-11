@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MAHBOD STORE</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#080d14;
+    color:#fff;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(8,13,20,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #1d2a3a;
+}
+
+.nav{
+    max-width:1100px;
+    margin:auto;
+    padding:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#38a5ff;
+}
+
+.cart-btn{
+    background:#111b28;
+    color:white;
+    border:1px solid #293a4e;
+    padding:10px 14px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.badge{
+    background:#38a5ff;
+    color:#06101a;
+    padding:2px 7px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.hero{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 15px 18px;
+}
+
+.hero-box{
+    padding:32px;
+    border-radius:24px;
+    border:1px solid #233449;
+    background:linear-gradient(135deg,#132236,#0c141f);
+}
+
+.hero h1{
+    font-size:clamp(28px,7vw,48px);
+    margin-bottom:8px;
+}
+
+.hero h1 span{
+    color:#38a5ff;
+}
+
+.hero p{
+    color:#9ba8b7;
+}
+
+.tools{
+    max-width:1100px;
+    margin:auto;
+    padding:0 15px 20px;
+    display:flex;
+    gap:10px;
+}
+
+.search,
+.filter{
+    background:#101923;
+    color:white;
+    border:1px solid #293a4e;
+    border-radius:12px;
+    padding:13px;
+}
+
+.search{
+    flex:1;
+}
+
+.filter{
+    min-width:150px;
+}
+
+.products{
+    max-width:1100px;
+    margin:auto;
+    padding:0 15px 50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#101923;
+    border:1px solid #202f40;
+    border-radius:18px;
+    overflow:hidden;
+}
+
+.product-image{
+    height:180px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    background:linear-gradient(135deg,#192b40,#0c141e);
+}
+
+.info{
+    padding:14px;
+}
+
+.info h3{
+    margin-bottom:5px;
+}
+
+.description{
+    color:#8997a7;
+    font-size:12px;
+    min-height:40px;
+}
+
+.price{
+    color:#54b1ff;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.add{
+    width:100%;
+    padding:11px;
+    border:0;
+    border-radius:11px;
+    background:#38a5ff;
+    color:#06101a;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.empty{
+    grid-column:1/-1;
+    text-align:center;
+    padding:50px;
+    color:#8290a0;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:#000a;
+    z-index:200;
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.cart-panel{
+    position:fixed;
+    z-index:300;
+    top:0;
+    right:-430px;
+    width:min(430px,94vw);
+    height:100vh;
+    background:#0d1620;
+    border-left:1px solid #293a4e;
+    padding:20px;
+    transition:.25s;
+    overflow:auto;
+}
+
+.cart-panel.open{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.close{
+    background:#182432;
+    color:white;
+    border:0;
+    border-radius:9px;
+    padding:8px 12px;
+    cursor:pointer;
+}
+
+.cart-item{
+    padding:14px 0;
+    border-bottom:1px solid #243344;
+}
+
+.cart-item small{
+    color:#8997a7;
+}
+
+.remove{
+    float:left;
+    background:none;
+    border:0;
+    color:#ff7181;
+    cursor:pointer;
+}
+
+.total{
+    margin:20px 0;
+    color:#54b1ff;
+    font-size:19px;
+    font-weight:bold;
+}
+
+.checkout{
+    width:100%;
+    padding:13px;
+    border:0;
+    border-radius:11px;
+    background:#38a5ff;
+    color:#06101a;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:400;
+    background:#000b;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(500px,100%);
+    background:#101923;
+    border:1px solid #293a4e;
+    border-radius:20px;
+    padding:20px;
+}
+
+.field{
+    width:100%;
+    padding:12px;
+    margin:6px 0 10px;
+    background:#0a121c;
+    color:white;
+    border:1px solid #293a4e;
+    border-radius:10px;
+}
+
+textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
+.cancel{
+    width:100%;
+    margin-top:10px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#667486;
+    border-top:1px solid #1d2938;
+}
+
+@media(max-width:560px){
+
+    .tools{
+        flex-direction:column;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:9px;
+    }
+
+    .product-image{
+        height:145px;
+    }
+
+    .info{
+        padding:10px;
+    }
+
+    .info h3{
+        font-size:14px;
+    }
+
+    .description{
+        font-size:10px;
+    }
+
+    .price{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+MAHBOD <span>STORE</span>
+</div>
+
+<button class="cart-btn" onclick="openCart()">
+🛒 سبد خرید
+<span class="badge" id="cartCount">0</span>
+</button>
+
+</div>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-box">
+
+<h1>
+فروشگاه <span>MAHBOD</span>
+</h1>
+
+<p>
+محصولات موردنظرت رو پیدا کن و سفارشت رو ثبت کن.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="tools">
+
+<input
+class="search"
+id="search"
+placeholder="🔎 جستجوی محصول..."
+oninput="showProducts()"
+>
+
+<select
+class="filter"
+id="category"
+onchange="showProducts()"
+>
+
+<option value="all">
+همه محصولات
+</option>
+
+<option value="digital">
+لوازم دیجیتال
+</option>
+
+<option value="accessory">
+لوازم جانبی
+</option>
+
+<option value="other">
+سایر
+</option>
+
+</select>
+
+</section>
+
+
+<main
+class="products"
+id="products">
+</main>
+
+
+<footer>
+
+MAHBOD STORE © 2026
+
+</footer>
+
+
+
+<div
+class="overlay"
+id="overlay"
+onclick="closeCart()">
+</div>
+
+
+<aside
+class="cart-panel"
+id="cartPanel">
+
+<div class="cart-header">
+
+<h2>🛒 سبد خرید</h2>
+
+<button
+class="close"
+onclick="closeCart()">
+✕
+</button>
+
+</div>
+
+<div id="cartItems"></div>
+
+<div
+class="total"
+id="total">
+مجموع: ۰ تومان
+</div>
+
+<button
+class="checkout"
+onclick="openCheckout()">
+ثبت سفارش
+</button>
+
+</aside>
+
+
+
+<div
+class="modal"
+id="checkoutModal">
+
+<div class="modal-box">
+
+<h2>ثبت سفارش</h2>
+
+<input
+class="field"
+id="name"
+placeholder="نام و نام خانوادگی"
+>
+
+<input
+class="field"
+id="phone"
+placeholder="شماره تماس"
+>
+
+<textarea
+class="field"
+id="address"
+placeholder="آدرس / توضیحات سفارش">
+</textarea>
+
+<button
+class="checkout"
+onclick="submitOrder()">
+ارسال سفارش
+</button>
+
+<button
+class="close cancel"
+onclick="closeCheckout()">
+انصراف
+</button>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+const products = [
+
+{
+id:1,
+name:"محصول نمونه ۱",
+category:"digital",
+price:1250000,
+icon:"📱",
+description:"محصول نمونه فروشگاه"
+},
+
+{
+id:2,
+name:"محصول نمونه ۲",
+category:"accessory",
+price:480000,
+icon:"🎧",
+description:"لوازم جانبی با کیفیت"
+},
+
+{
+id:3,
+name:"محصول نمونه ۳",
+category:"other",
+price:850000,
+icon:"🎮",
+description:"محصول نمونه دیگر"
+},
+
+{
+id:4,
+name:"محصول نمونه ۴",
+category:"accessory",
+price:320000,
+icon:"⌨️",
+description:"محصول نمونه فروشگاه"
+}
+
+];
+
+
+let cart =
+JSON.parse(
+localStorage.getItem("mahbod_cart") || "[]"
+);
+
+
+function money(number){
+
+return number.toLocaleString("fa-IR")
++" تومان";
+
+}
+
+
+function showProducts(){
+
+const search =
+document
+.getElementById("search")
+.value
+.toLowerCase();
+
+const category =
+document
+.getElementById("category")
+.value;
+
+
+const list =
+products.filter(product => {
+
+const matchSearch =
+product.name
+.toLowerCase()
+.includes(search);
+
+const matchCategory =
+category === "all"
+||
+product.category === category;
+
+return matchSearch && matchCategory;
+
+});
+
+
+const container =
+document.getElementById("products");
+
+
+if(list.length === 0){
+
+container.innerHTML =
+'<div class="empty">محصولی پیدا نشد.</div>';
+
+return;
+
+}
+
+
+container.innerHTML =
+list.map(product => `
+
+<article class="card">
+
+<div class="product-image">
+${product.icon}
+</div>
+
+<div class="info">
+
+<h3>
+${product.name}
+</h3>
+
+<div class="description">
+${product.description}
+</div>
+
+<div class="price">
+${money(product.price)}
+</div>
+
+<button
+class="add"
+onclick="addToCart(${product.id})">
+
+افزودن به سبد
+
+</button>
+
+</div>
+
+</article>
+
+`).join("");
+
+}
+
+
+
+function addToCart(id){
+
+const item =
+cart.find(product => product.id === id);
+
+if(item){
+
+item.quantity++;
+
+}else{
+
+cart.push({
+id:id,
+quantity:1
+});
+
+}
+
+saveCart();
+
+openCart();
+
+}
+
+
+
+function saveCart(){
+
+localStorage.setItem(
+"mahbod_cart",
+JSON.stringify(cart)
+);
+
+showCart();
+
+}
+
+
+
+function showCart(){
+
+const container =
+document.getElementById("cartItems");
+
+let total = 0;
+
+let count = 0;
+
+
+if(cart.length === 0){
+
+container.innerHTML =
+'<div class="empty">سبد خرید خالی است.</div>';
+
+}else{
+
+container.innerHTML =
+cart.map(item => {
+
+const product =
+products.find(
+p => p.id === item.id
+);
+
+total +=
+product.price *
+item.quantity;
+
+count +=
+item.quantity;
+
+
+return `
+
+<div class="cart-item">
+
+<b>
+${product.name}
+</b>
+
+<br>
+
+<small>
+${item.quantity}
+×
+${money(product.price)}
+</small>
+
+<button
+class="remove"
+onclick="removeFromCart(${product.id})">
+
+حذف
+
+</button>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+document
+.getElementById("total")
+.textContent =
+"مجموع: " + money(total);
+
+
+document
+.getElementById("cartCount")
+.textContent =
+count.toLocaleString("fa-IR");
+
+}
+
+
+
+function removeFromCart(id){
+
+cart =
+cart.filter(
+item => item.id !== id
+);
+
+saveCart();
+
+}
+
+
+
+function openCart(){
+
+document
+.getElementById("cartPanel")
+.classList.add("open");
+
+document
+.getElementById("overlay")
+.classList.add("show");
+
+showCart();
+
+}
+
+
+
+function closeCart(){
+
+document
+.getElementById("cartPanel")
+.classList.remove("open");
+
+document
+.getElementById("overlay")
+.classList.remove("show");
+
+}
+
+
+
+function openCheckout(){
+
+if(cart.length === 0){
+
+alert("سبد خرید خالی است.");
+
+return;
+
+}
+
+document
+.getElementById("checkoutModal")
+.classList.add("show");
+
+}
+
+
+
+function closeCheckout(){
+
+document
+.getElementById("checkoutModal")
+.classList.remove("show");
+
+}
+
+
+
+function submitOrder(){
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+const phone =
+document
+.getElementById("phone")
+.value
+.trim();
+
+const address =
+document
+.getElementById("address")
+.value
+.trim();
+
+
+if(!name || !phone){
+
+alert(
+"لطفاً نام و شماره تماس را وارد کنید."
+);
+
+return;
+
+}
+
+
+const orders =
+JSON.parse(
+localStorage.getItem("mahbod_orders")
+|| "[]"
+);
+
+
+orders.push({
+
+id:Date.now(),
+
+name:name,
+
+phone:phone,
+
+address:address,
+
+products:cart,
+
+date:new Date().toISOString()
+
+});
+
+
+localStorage.setItem(
+"mahbod_orders",
+JSON.stringify(orders)
+);
+
+
+cart=[];
+
+saveCart();
+
+closeCheckout();
+
+closeCart();
+
+
+alert(
+"سفارش شما با موفقیت ثبت شد."
+);
+
+}
+
+
+
+showProducts();
+
+showCart();
+
+</script>
+
+</body>
+  </html>
