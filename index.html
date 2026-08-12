@@ -3,61 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#080d14">
+<meta name="theme-color" content="#07111d">
+
 <title>MAHBOD STORE</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
+
 body{
 font-family:Tahoma,Arial,sans-serif;
-background:#070b11;
-color:#f5f7fb;
+background:#050a11;
+color:#f5f8fc;
 line-height:1.8;
+overflow-x:hidden;
 }
+
 button,input,select,textarea{font-family:inherit}
 button{cursor:pointer}
 a{text-decoration:none;color:inherit}
 
 :root{
---blue:#42a5ff;
---blue2:#167bd1;
---bg:#070b11;
---card:#101722;
---card2:#141e2a;
---border:#223143;
---muted:#8997a7;
---danger:#ff6678;
+--blue:#4db4ff;
+--blue2:#1686df;
+--deep:#07111d;
+--card:#0d1722;
+--card2:#111e2b;
+--border:#1c344a;
+--muted:#8b9caf;
+--danger:#ff6478;
 }
 
-/* HEADER */
+
+/* ================= HEADER ================= */
 
 header{
 position:sticky;
 top:0;
 z-index:1000;
-background:rgba(7,11,17,.90);
-backdrop-filter:blur(18px);
-border-bottom:1px solid #1b2838;
+background:rgba(5,10,17,.78);
+backdrop-filter:blur(20px);
+border-bottom:1px solid #173047;
 }
 
 .nav{
-max-width:1150px;
+max-width:1180px;
 margin:auto;
 padding:14px 18px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:15px;
 }
 
 .logo{
-font-size:22px;
+font-size:21px;
 font-weight:900;
-letter-spacing:.5px;
+letter-spacing:1px;
 }
 
-.logo span{color:var(--blue)}
+.logo span{
+color:var(--blue);
+}
 
 .nav-actions{
 display:flex;
@@ -65,219 +72,213 @@ gap:8px;
 }
 
 .icon-btn{
-background:#111b27;
+background:#0d1824;
 border:1px solid var(--border);
-color:#fff;
-border-radius:11px;
-padding:10px 13px;
+color:white;
+border-radius:12px;
+padding:9px 13px;
+transition:.2s;
+}
+
+.icon-btn:hover{
+border-color:var(--blue);
+transform:translateY(-2px);
 }
 
 .badge{
 background:var(--blue);
-color:#06101a;
+color:#03101b;
 border-radius:50px;
 padding:1px 7px;
 font-size:11px;
-font-weight:900;
+font-weight:bold;
 }
 
-/* HERO */
+
+/* ================= HERO ================= */
 
 .hero{
-max-width:1150px;
+max-width:1180px;
 margin:auto;
-padding:28px 18px 20px;
+padding:25px 18px 20px;
 }
 
 .hero-box{
 position:relative;
 overflow:hidden;
-border:1px solid #25374b;
-border-radius:27px;
-padding:38px 30px;
+border-radius:30px;
+padding:48px 35px;
+border:1px solid #20405a;
 background:
-radial-gradient(circle at 85% 20%,#1d5c8c55,transparent 30%),
-linear-gradient(135deg,#142437,#0c131d);
+radial-gradient(circle at 90% 15%,#188be544,transparent 28%),
+radial-gradient(circle at 10% 90%,#0a61a533,transparent 30%),
+linear-gradient(135deg,#101f2f,#07111d 70%);
+box-shadow:0 20px 60px #0006;
 }
 
-.hero-box:after{
+.hero-box:before{
 content:"";
 position:absolute;
-width:230px;
-height:230px;
-border:1px solid #42a5ff33;
+width:330px;
+height:330px;
 border-radius:50%;
-left:-70px;
-bottom:-110px;
+border:1px solid #4db4ff18;
+right:-130px;
+top:-150px;
 }
 
 .hero small{
 color:var(--blue);
-font-weight:bold;
+font-weight:900;
+letter-spacing:2px;
 }
 
 .hero h1{
-font-size:clamp(30px,7vw,56px);
-line-height:1.3;
-margin:7px 0;
+font-size:clamp(32px,7vw,58px);
+line-height:1.35;
+margin:7px 0 10px;
 }
 
-.hero h1 span{color:var(--blue)}
+.hero h1 span{
+color:var(--blue);
+}
 
 .hero p{
-color:#aab6c5;
 max-width:650px;
+color:#9eacbb;
+font-size:14px;
 }
 
 .hero-buttons{
 display:flex;
 gap:10px;
-margin-top:20px;
 flex-wrap:wrap;
+margin-top:22px;
 }
 
 .primary{
-background:var(--blue);
-color:#04101b;
+background:linear-gradient(135deg,#5bc0ff,#1686df);
+color:#03101a;
 border:0;
 border-radius:12px;
-padding:12px 18px;
+padding:12px 19px;
 font-weight:900;
+box-shadow:0 7px 25px #1686df30;
 }
 
 .secondary{
-background:#111c29;
-color:#fff;
+background:#0c1825;
+color:white;
 border:1px solid var(--border);
 border-radius:12px;
 padding:12px 18px;
 }
 
-/* SEARCH */
+
+/* ================= SEARCH / FILTER ================= */
 
 .tools{
-max-width:1150px;
+max-width:1180px;
 margin:auto;
-padding:5px 18px 20px;
+padding:5px 18px 18px;
 display:flex;
 gap:9px;
-flex-wrap:wrap;
 }
 
 .search{
 flex:1;
-min-width:200px;
-background:#101822;
+background:#0c1621;
 border:1px solid var(--border);
-border-radius:12px;
+border-radius:13px;
 padding:13px 15px;
-color:#fff;
+color:white;
 outline:none;
 }
 
 .search:focus{
 border-color:var(--blue);
+box-shadow:0 0 0 3px #4db4ff12;
 }
 
 .select{
-background:#101822;
-color:#fff;
+background:#0c1621;
+color:white;
 border:1px solid var(--border);
-border-radius:12px;
-padding:12px;
+border-radius:13px;
+padding:12px 14px;
 outline:none;
 }
 
-/* CATEGORIES */
 
-.categories{
-max-width:1150px;
-margin:auto;
-padding:0 18px 22px;
-display:flex;
-gap:8px;
-overflow:auto;
-scrollbar-width:none;
-}
-
-.categories::-webkit-scrollbar{display:none}
-
-.category{
-white-space:nowrap;
-background:#101822;
-color:#b9c5d2;
-border:1px solid var(--border);
-border-radius:30px;
-padding:8px 14px;
-}
-
-.category.active{
-background:#17334c;
-border-color:#357caf;
-color:#fff;
-}
-
-/* PRODUCTS */
+/* ================= SECTION ================= */
 
 .section-head{
-max-width:1150px;
+max-width:1180px;
 margin:auto;
-padding:8px 18px 14px;
+padding:10px 18px 15px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 }
 
-.section-head h2{font-size:22px}
+.section-head h2{
+font-size:22px;
+}
 
 .section-head span{
 font-size:12px;
 color:var(--muted);
 }
 
+
+/* ================= PRODUCTS ================= */
+
 .products{
-max-width:1150px;
+max-width:1180px;
 margin:auto;
-padding:0 18px 50px;
+padding:0 18px 55px;
 display:grid;
 grid-template-columns:repeat(auto-fill,minmax(215px,1fr));
-gap:15px;
+gap:16px;
 }
 
 .card{
-background:linear-gradient(180deg,#111a25,#0d141d);
+background:
+linear-gradient(180deg,#0e1925,#09121b);
 border:1px solid var(--border);
-border-radius:19px;
+border-radius:20px;
 overflow:hidden;
 position:relative;
-transition:.2s;
+transition:.25s;
+box-shadow:0 10px 30px #0002;
 }
 
 .card:hover{
-transform:translateY(-4px);
-border-color:#315474;
+transform:translateY(-5px);
+border-color:#2e668f;
+box-shadow:0 18px 40px #0005;
 }
 
 .product-image{
-height:190px;
+height:195px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:65px;
+font-size:67px;
 background:
-radial-gradient(circle at 50% 40%,#24425e,#111b27 55%,#0c131c);
+radial-gradient(circle at 50% 40%,#24557b,#0d1b28 55%,#07101a);
 position:relative;
 }
 
 .discount{
 position:absolute;
-top:10px;
-right:10px;
-background:#ff5267;
+top:11px;
+right:11px;
+background:#ff526b;
 color:white;
-padding:3px 8px;
+padding:3px 9px;
 border-radius:8px;
-font-size:11px;
+font-size:10px;
 font-weight:bold;
 }
 
@@ -285,18 +286,22 @@ font-weight:bold;
 position:absolute;
 top:10px;
 left:10px;
-width:34px;
-height:34px;
+width:35px;
+height:35px;
 border-radius:50%;
-border:1px solid #ffffff20;
-background:#0007;
+border:1px solid #ffffff22;
+background:#0008;
 color:white;
-font-size:17px;
+font-size:18px;
 }
 
-.favorite.active{color:#ff6075}
+.favorite.active{
+color:#ff6378;
+}
 
-.info{padding:14px}
+.info{
+padding:15px;
+}
 
 .info h3{
 font-size:16px;
@@ -306,119 +311,150 @@ margin-bottom:5px;
 .description{
 color:var(--muted);
 font-size:12px;
-min-height:42px;
+min-height:43px;
 }
 
 .price-row{
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:5px;
-margin:10px 0;
+margin:11px 0;
 }
 
 .price{
-color:#62b8ff;
+color:#62bcff;
 font-size:15px;
 font-weight:900;
 }
 
 .old-price{
-font-size:11px;
-color:#657384;
+color:#667587;
+font-size:10px;
 text-decoration:line-through;
 }
 
 .stock{
-font-size:11px;
-color:#69d39b;
+font-size:10px;
+color:#63d49c;
 }
 
-.stock.out{color:#ff7181}
+.stock.out{
+color:#ff6c80;
+}
 
 .add{
 width:100%;
 border:0;
 border-radius:11px;
 padding:11px;
-background:var(--blue);
-color:#04101a;
+background:linear-gradient(135deg,#50b8ff,#1686df);
+color:#03101a;
 font-weight:900;
 }
 
-/* EMPTY */
-
-.empty{
-grid-column:1/-1;
-text-align:center;
-padding:55px 15px;
-color:var(--muted);
+.add:disabled{
+opacity:.4;
 }
 
-/* INFO SECTIONS */
+
+/* ================= ABOUT ================= */
 
 .info-section{
-max-width:1150px;
-margin:0 auto;
-padding:20px 18px 55px;
+max-width:1180px;
+margin:auto;
+padding:10px 18px 55px;
 }
 
 .info-box{
-background:#0f1822;
+background:
+linear-gradient(135deg,#0d1823,#09121b);
 border:1px solid var(--border);
-border-radius:20px;
-padding:22px;
-margin-bottom:15px;
+border-radius:21px;
+padding:23px;
+margin-bottom:16px;
+box-shadow:0 10px 35px #0003;
 }
 
 .info-box h2{
-margin-bottom:8px;
+margin-bottom:7px;
 }
 
 .info-box p{
-color:#9aa7b6;
-font-size:14px;
+color:#98a6b6;
+font-size:13px;
 }
+
+
+/* ================= CONTACT ================= */
 
 .contact-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:10px;
-margin-top:15px;
+gap:12px;
+margin-top:17px;
 }
 
 .contact{
-background:#111c28;
+display:block;
+background:#0b1621;
 border:1px solid var(--border);
-padding:15px;
-border-radius:14px;
+border-radius:15px;
+padding:17px;
+transition:.2s;
+}
+
+.contact:hover{
+border-color:var(--blue);
+transform:translateY(-3px);
+}
+
+.contact-icon{
+font-size:25px;
+margin-bottom:5px;
 }
 
 .contact b{
 display:block;
-margin-bottom:4px;
+font-size:14px;
 }
 
 .contact span{
-color:var(--muted);
-font-size:12px;
+display:block;
+color:#7f90a3;
+font-size:11px;
+margin:3px 0 12px;
 }
 
-/* FAQ */
+.contact-btn{
+display:inline-block;
+font-size:11px;
+color:var(--blue);
+}
+
+
+/* ================= FAQ ================= */
 
 details{
-background:#111a25;
+background:#0b1621;
 border:1px solid var(--border);
-border-radius:13px;
+border-radius:14px;
 padding:13px 15px;
-margin-top:8px;
+margin-top:9px;
+}
+
+summary{
+cursor:pointer;
+font-size:13px;
+font-weight:bold;
 }
 
 details p{
-margin-top:8px;
+margin-top:9px;
+font-size:12px;
 }
 
-/* DRAWER */
+
+/* ================= CART ================= */
 
 .overlay{
 position:fixed;
@@ -428,7 +464,9 @@ z-index:2000;
 display:none;
 }
 
-.overlay.show{display:block}
+.overlay.show{
+display:block;
+}
 
 .drawer{
 position:fixed;
@@ -437,14 +475,16 @@ top:0;
 right:-450px;
 width:min(450px,94vw);
 height:100vh;
-background:#0d151f;
+background:#0a141e;
 border-left:1px solid var(--border);
 padding:20px;
 transition:.25s;
 overflow:auto;
 }
 
-.drawer.open{right:0}
+.drawer.open{
+right:0;
+}
 
 .drawer-head{
 display:flex;
@@ -453,9 +493,9 @@ align-items:center;
 }
 
 .close{
-background:#182432;
+background:#152332;
 border:0;
-color:#fff;
+color:white;
 border-radius:9px;
 padding:8px 12px;
 }
@@ -465,28 +505,31 @@ display:flex;
 gap:10px;
 align-items:center;
 padding:14px 0;
-border-bottom:1px solid #213040;
+border-bottom:1px solid #1c3043;
 }
 
 .cart-icon{
 width:48px;
 height:48px;
-border-radius:10px;
+border-radius:11px;
 display:grid;
 place-items:center;
-background:#162333;
-font-size:25px;
+background:#122131;
+font-size:24px;
 }
 
-.cart-info{flex:1}
+.cart-info{
+flex:1;
+}
 
 .cart-info b{
-font-size:13px;
+font-size:12px;
 }
 
 .cart-info small{
 display:block;
 color:var(--muted);
+font-size:10px;
 }
 
 .qty{
@@ -501,7 +544,7 @@ width:25px;
 height:25px;
 border-radius:7px;
 border:1px solid var(--border);
-background:#172432;
+background:#142434;
 color:white;
 }
 
@@ -509,16 +552,25 @@ color:white;
 background:none;
 border:0;
 color:var(--danger);
+font-size:11px;
 }
 
 .total{
-font-size:20px;
+font-size:19px;
 font-weight:900;
-color:#62b8ff;
+color:#62bcff;
 margin:20px 0;
 }
 
-/* MODAL */
+.empty{
+grid-column:1/-1;
+text-align:center;
+padding:55px 15px;
+color:var(--muted);
+}
+
+
+/* ================= MODALS ================= */
 
 .modal{
 position:fixed;
@@ -531,30 +583,43 @@ justify-content:center;
 padding:15px;
 }
 
-.modal.show{display:flex}
+.modal.show{
+display:flex;
+}
 
 .modal-box{
 width:min(520px,100%);
 max-height:90vh;
 overflow:auto;
-background:#101923;
+background:#0d1823;
 border:1px solid var(--border);
-border-radius:21px;
+border-radius:22px;
 padding:20px;
+}
+
+.product-big{
+text-align:center;
+font-size:90px;
+background:#091520;
+border-radius:16px;
+padding:25px;
+margin:10px 0 15px;
 }
 
 .field{
 width:100%;
-background:#0a121b;
+background:#08111a;
 border:1px solid var(--border);
-color:#fff;
-border-radius:10px;
+color:white;
+border-radius:11px;
 padding:12px;
 margin:5px 0 10px;
 outline:none;
 }
 
-.field:focus{border-color:var(--blue)}
+.field:focus{
+border-color:var(--blue);
+}
 
 textarea.field{
 min-height:90px;
@@ -562,54 +627,43 @@ resize:vertical;
 }
 
 .form-label{
-font-size:12px;
-color:#aeb9c6;
+font-size:11px;
+color:#aebac7;
 }
 
 .error{
 font-size:11px;
-color:#ff7181;
+color:#ff7081;
 display:none;
-margin-top:-5px;
-margin-bottom:5px;
 }
 
 .order-summary{
-background:#0b131d;
+background:#08111a;
 border:1px solid var(--border);
 padding:12px;
 border-radius:12px;
 margin:10px 0 15px;
 font-size:12px;
-color:#aeb9c6;
+color:#a9b6c4;
 }
 
-/* PRODUCT MODAL */
 
-.product-big{
-text-align:center;
-font-size:90px;
-background:#0d1722;
-border-radius:15px;
-padding:25px;
-margin-bottom:15px;
-}
-
-/* TOAST */
+/* ================= TOAST ================= */
 
 .toast{
 position:fixed;
 bottom:20px;
 left:50%;
 transform:translate(-50%,20px);
-background:#142333;
-border:1px solid #315474;
-padding:11px 17px;
+background:#122333;
+border:1px solid #2b5877;
+padding:11px 18px;
 border-radius:12px;
 z-index:5000;
 opacity:0;
 pointer-events:none;
 transition:.25s;
+font-size:12px;
 }
 
 .toast.show{
@@ -617,16 +671,19 @@ opacity:1;
 transform:translate(-50%,0);
 }
 
-/* FOOTER */
+
+/* ================= FOOTER ================= */
 
 footer{
-border-top:1px solid #1b2838;
+border-top:1px solid #142637;
 text-align:center;
-color:#667486;
+color:#617184;
 padding:30px 15px;
+font-size:11px;
 }
 
-/* MOBILE */
+
+/* ================= MOBILE ================= */
 
 @media(max-width:650px){
 
@@ -634,24 +691,25 @@ padding:30px 15px;
 padding:12px;
 }
 
-.logo{font-size:18px}
+.logo{
+font-size:18px;
+}
 
 .hero{
-padding:18px 12px;
+padding:16px 12px 18px;
 }
 
 .hero-box{
-padding:25px 20px;
+padding:28px 20px;
+border-radius:23px;
+}
+
+.hero h1{
+font-size:32px;
 }
 
 .tools{
 padding:0 12px 15px;
-flex-direction:column;
-}
-
-.categories{
-padding-right:12px;
-padding-left:12px;
 }
 
 .products{
@@ -679,16 +737,7 @@ min-height:38px;
 }
 
 .price{
-font-size:12px;
-}
-
-.old-price{
-font-size:9px;
-}
-
-.add{
 font-size:11px;
-padding:10px 5px;
 }
 
 .contact-grid{
@@ -706,6 +755,7 @@ padding-left:12px;
 
 <body>
 
+
 <header>
 
 <nav class="nav">
@@ -717,13 +767,11 @@ MAHBOD <span>STORE</span>
 <div class="nav-actions">
 
 <button class="icon-btn" onclick="showFavorites()">
-❤️
-<span class="badge" id="favCount">0</span>
+❤️ <span class="badge" id="favCount">0</span>
 </button>
 
 <button class="icon-btn" onclick="openCart()">
-🛒
-<span class="badge" id="cartCount">0</span>
+🛒 <span class="badge" id="cartCount">0</span>
 </button>
 
 </div>
@@ -740,24 +788,30 @@ MAHBOD <span>STORE</span>
 <small>MAHBOD STORE</small>
 
 <h1>
-خرید آسان،
-<span>سریع و مطمئن</span>
+انتخاب ساده،
+<span>خرید مطمئن</span>
 </h1>
 
 <p>
-محصولات موردنظرت رو پیدا کن، بررسی کن و در چند مرحله سفارشت رو ثبت کن.
+محصولات منتخب MAHBOD STORE را ببین، محصول موردنظرت را انتخاب کن و سفارش خودت را در چند مرحله ثبت کن.
 </p>
 
 <div class="hero-buttons">
 
-<button class="primary"
+<button
+class="primary"
 onclick="document.getElementById('productsSection').scrollIntoView()">
+
 مشاهده محصولات
+
 </button>
 
-<button class="secondary"
+<button
+class="secondary"
 onclick="document.getElementById('about').scrollIntoView()">
+
 درباره فروشگاه
+
 </button>
 
 </div>
@@ -766,6 +820,8 @@ onclick="document.getElementById('about').scrollIntoView()">
 
 </section>
 
+
+<!-- SEARCH + FILTER -->
 
 <section class="tools">
 
@@ -779,59 +835,32 @@ oninput="renderProducts()"
 <select
 class="select"
 id="sort"
-onchange="renderProducts()"
->
+onchange="renderProducts()">
 
 <option value="default">مرتب‌سازی</option>
-<option value="cheap">ارزان‌ترین</option>
-<option value="expensive">گران‌ترین</option>
-<option value="new">جدیدترین</option>
+
+<option value="cheap">
+ارزان‌ترین
+</option>
+
+<option value="expensive">
+گران‌ترین
+</option>
+
+<option value="new">
+جدیدترین
+</option>
 
 </select>
 
 </section>
 
 
-<div class="categories">
-
-<button class="category active"
-data-cat="all"
-onclick="setCategory('all',this)">
-همه
-</button>
-
-<button class="category"
-data-cat="digital"
-onclick="setCategory('digital',this)">
-📱 دیجیتال
-</button>
-
-<button class="category"
-data-cat="accessory"
-onclick="setCategory('accessory',this)">
-🎧 لوازم جانبی
-</button>
-
-<button class="category"
-data-cat="gaming"
-onclick="setCategory('gaming',this)">
-🎮 گیمینگ
-</button>
-
-<button class="category"
-data-cat="other"
-onclick="setCategory('other',this)">
-📦 سایر
-</button>
-
-</div>
-
-
 <section id="productsSection">
 
 <div class="section-head">
 
-<h2>محصولات</h2>
+<h2>محصولات منتخب</h2>
 
 <span id="productCount"></span>
 
@@ -849,61 +878,154 @@ id="products">
 class="info-section"
 id="about">
 
+
 <div class="info-box">
 
-<h2>درباره MAHBOD STORE</h2>
+<h2>✨ درباره MAHBOD STORE</h2>
 
 <p>
-MAHBOD STORE یک فروشگاه آنلاین ساده و مدرن برای خرید سریع و راحت محصولات است.
-هدف ما این است که انتخاب و ثبت سفارش تا حد ممکن ساده باشد.
+ما در MAHBOD STORE تلاش می‌کنیم مجموعه‌ای کوچک و منتخب از محصولاتی را ارائه کنیم که ارزش خرید داشته باشند. هدف ما فروشگاه شلوغ و پیچیده نیست؛ تجربه‌ای ساده، سریع و مطمئن است.
 </p>
 
 </div>
 
 
+<!-- CONTACT -->
+
 <div class="info-box">
 
-<h2>📞 تماس با ما</h2>
+<h2>📞 ارتباط با ما</h2>
+
+<p>
+اگر درباره محصول، سفارش یا نحوه ارسال سوالی داری، از راه‌های زیر با ما در ارتباط باش.
+</p>
 
 <div class="contact-grid">
 
-<div class="contact">
-<b>📱 تلفن</b>
-<span>شماره تماس شما</span>
+
+<a
+class="contact"
+href="tel:+989000000000">
+
+<div class="contact-icon">
+📱
 </div>
 
-<div class="contact">
-<b>💬 پشتیبانی</b>
-<span>پاسخگویی به سوالات شما</span>
+<b>تماس تلفنی</b>
+
+<span>
+پاسخگویی مستقیم
+</span>
+
+<div class="contact-btn">
+تماس با ما ←
 </div>
 
-<div class="contact">
-<b>📦 ارسال</b>
-<span>پیگیری سفارش‌ها</span>
+</a>
+
+
+<a
+class="contact"
+href="https://t.me/">
+
+<div class="contact-icon">
+💬
 </div>
+
+<b>تلگرام</b>
+
+<span>
+پشتیبانی و پاسخ به سوالات
+</span>
+
+<div class="contact-btn">
+ورود به تلگرام ←
+</div>
+
+</a>
+
+
+<a
+class="contact"
+href="mailto:info@mahbodstore.ir">
+
+<div class="contact-icon">
+✉️
+</div>
+
+<b>ایمیل</b>
+
+<span>
+برای درخواست‌ها و پیام‌ها
+</span>
+
+<div class="contact-btn">
+ارسال ایمیل ←
+</div>
+
+</a>
+
 
 </div>
 
 </div>
 
+
+<!-- FAQ -->
 
 <div class="info-box">
 
 <h2>❓ سوالات متداول</h2>
 
 <details>
-<summary>چطور سفارش ثبت کنم؟</summary>
-<p>محصول را به سبد خرید اضافه کنید، اطلاعات خود را وارد کنید و سفارش را ثبت کنید.</p>
+
+<summary>
+چطور سفارش ثبت کنم؟
+</summary>
+
+<p>
+محصول موردنظرت را به سبد خرید اضافه کن، اطلاعات سفارش را وارد کن و روی ثبت نهایی سفارش بزن.
+</p>
+
 </details>
 
-<details>
-<summary>آیا امکان لغو سفارش وجود دارد؟</summary>
-<p>برای لغو سفارش با پشتیبانی فروشگاه تماس بگیرید.</p>
-</details>
 
 <details>
-<summary>چطور سفارش خودم را پیگیری کنم؟</summary>
-<p>پس از اتصال سیستم سفارش به پنل مدیریت، وضعیت سفارش از همان قسمت قابل پیگیری خواهد بود.</p>
+
+<summary>
+کد پستی را چرا باید وارد کنم؟
+</summary>
+
+<p>
+کد پستی برای تکمیل اطلاعات ارسال سفارش استفاده می‌شود.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+آیا می‌توانم سفارشم را لغو کنم؟
+</summary>
+
+<p>
+برای درخواست لغو یا تغییر سفارش با پشتیبانی تماس بگیر.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+چطور سفارش خودم را پیگیری کنم؟
+</summary>
+
+<p>
+پس از اتصال سیستم سفارش به پنل مدیریت، وضعیت سفارش از طریق پنل قابل پیگیری خواهد بود.
+</p>
+
 </details>
 
 </div>
@@ -912,13 +1034,17 @@ MAHBOD STORE یک فروشگاه آنلاین ساده و مدرن برای خر
 
 
 <footer>
+
 MAHBOD STORE © 2026
+
 <br>
+
 تمامی حقوق محفوظ است.
+
 </footer>
 
 
-<!-- OVERLAY -->
+<!-- CART -->
 
 <div
 class="overlay"
@@ -926,8 +1052,6 @@ id="overlay"
 onclick="closeCart()">
 </div>
 
-
-<!-- CART -->
 
 <aside
 class="drawer"
@@ -957,13 +1081,15 @@ id="cartTotal">
 class="primary"
 style="width:100%"
 onclick="openCheckout()">
+
 ثبت سفارش
+
 </button>
 
 </aside>
 
 
-<!-- PRODUCT MODAL -->
+<!-- PRODUCT -->
 
 <div
 class="modal"
@@ -999,7 +1125,9 @@ class="price">
 id="bigAdd"
 class="primary"
 style="width:100%;margin-top:15px">
+
 افزودن به سبد
+
 </button>
 
 </div>
@@ -1015,7 +1143,8 @@ id="checkoutModal">
 
 <div class="modal-box">
 
-<div class="section-head" style="padding:0 0 10px">
+<div class="section-head"
+style="padding:0 0 10px">
 
 <h2>ثبت سفارش</h2>
 
@@ -1028,7 +1157,8 @@ onclick="closeCheckout()">
 </div>
 
 
-<div class="order-summary"
+<div
+class="order-summary"
 id="orderSummary">
 </div>
 
@@ -1040,8 +1170,9 @@ id="orderSummary">
 <input
 class="field"
 id="customerName"
-placeholder="مثلاً مهبد کفیان"
+placeholder="نام و نام خانوادگی"
 >
+
 
 <label class="form-label">
 شماره تماس
@@ -1053,6 +1184,7 @@ id="customerPhone"
 inputmode="tel"
 placeholder="09xxxxxxxxx"
 >
+
 
 <label class="form-label">
 کد پستی
@@ -1069,7 +1201,9 @@ placeholder="کد پستی ۱۰ رقمی"
 <div
 class="error"
 id="postalError">
-کد پستی باید ۱۰ رقم باشد.
+
+کد پستی باید دقیقاً ۱۰ رقم باشد.
+
 </div>
 
 
@@ -1099,7 +1233,9 @@ placeholder="توضیحات اختیاری..."
 class="primary"
 style="width:100%"
 onclick="submitOrder()">
+
 ثبت نهایی سفارش
+
 </button>
 
 </div>
@@ -1115,7 +1251,8 @@ id="favoritesModal">
 
 <div class="modal-box">
 
-<div class="section-head" style="padding:0 0 10px">
+<div class="section-head"
+style="padding:0 0 10px">
 
 <h2>❤️ علاقه‌مندی‌ها</h2>
 
@@ -1141,120 +1278,63 @@ style="padding:0">
 <div
 class="toast"
 id="toast">
-محصول به سبد خرید اضافه شد.
 </div>
 
 
 <script>
 
-/* =========================
-   PRODUCTS
-========================= */
+/* ================= PRODUCTS ================= */
 
 const products=[
 
 {
 id:1,
-name:"گوشی هوشمند X",
-category:"digital",
-price:12500000,
-oldPrice:14000000,
-icon:"📱",
-description:"گوشی هوشمند با طراحی مدرن و عملکرد قدرتمند.",
+name:"محصول نمونه ۱",
+price:1250000,
+oldPrice:1450000,
+icon:"📦",
+description:"توضیحات محصول خودت را اینجا بنویس.",
 stock:8,
 new:true
 },
 
 {
 id:2,
-name:"هدفون بی‌سیم",
-category:"accessory",
-price:1450000,
-oldPrice:1750000,
-icon:"🎧",
-description:"هدفون بی‌سیم با کیفیت صدای عالی.",
+name:"محصول نمونه ۲",
+price:890000,
+oldPrice:null,
+icon:"🎁",
+description:"توضیحات محصول خودت را اینجا بنویس.",
 stock:12,
 new:true
 },
 
 {
 id:3,
-name:"دسته بازی",
-category:"gaming",
-price:1850000,
+name:"محصول نمونه ۳",
+price:1750000,
 oldPrice:2100000,
-icon:"🎮",
-description:"دسته بازی مناسب برای گیمرها.",
+icon:"✨",
+description:"توضیحات محصول خودت را اینجا بنویس.",
 stock:5,
 new:false
 },
 
 {
 id:4,
-name:"کیبورد مکانیکی",
-category:"accessory",
-price:2200000,
+name:"محصول نمونه ۴",
+price:650000,
 oldPrice:null,
-icon:"⌨️",
-description:"کیبورد مکانیکی مناسب گیمینگ و کار.",
-stock:7,
-new:true
-},
-
-{
-id:5,
-name:"ماوس گیمینگ",
-category:"gaming",
-price:980000,
-oldPrice:1200000,
-icon:"🖱️",
-description:"ماوس سریع و دقیق برای بازی.",
-stock:14,
-new:false
-},
-
-{
-id:6,
-name:"پاوربانک",
-category:"digital",
-price:750000,
-oldPrice:null,
-icon:"🔋",
-description:"پاوربانک قابل حمل با ظرفیت مناسب.",
-stock:20,
-new:false
-},
-
-{
-id:7,
-name:"فلش مموری",
-category:"digital",
-price:420000,
-oldPrice:500000,
-icon:"💾",
-description:"فلش مموری سریع و کم‌حجم.",
-stock:0,
-new:false
-},
-
-{
-id:8,
-name:"پد موس",
-category:"accessory",
-price:350000,
-oldPrice:null,
-icon:"🖥️",
-description:"پد موس بزرگ مناسب میز گیمینگ.",
-stock:18,
+icon:"⭐",
+description:"توضیحات محصول خودت را اینجا بنویس.",
+stock:10,
 new:true
 }
 
 ];
 
 
-/* =========================
-   STATE
-========================= */
+/* ================= STATE ================= */
 
 let cart=
 JSON.parse(
@@ -1266,20 +1346,18 @@ JSON.parse(
 localStorage.getItem("mahbod_favorites")||"[]"
 );
 
-let currentCategory="all";
 
+/* ================= MONEY ================= */
 
-/* =========================
-   HELPERS
-========================= */
+function money(n){
 
-function money(number){
-
-return number.toLocaleString("fa-IR")
+return n.toLocaleString("fa-IR")
 +" تومان";
 
 }
 
+
+/* ================= SAVE ================= */
 
 function save(){
 
@@ -1299,41 +1377,25 @@ updateBadges();
 }
 
 
-/* =========================
-   PRODUCTS
-========================= */
+/* ================= PRODUCTS ================= */
 
 function renderProducts(){
 
 let search=
-document
-.getElementById("search")
+document.getElementById("search")
 .value
 .trim()
 .toLowerCase();
 
 let sort=
-document
-.getElementById("sort")
+document.getElementById("sort")
 .value;
 
 
 let list=
-products.filter(product=>{
-
-let searchMatch=
-product.name
-.toLowerCase()
-.includes(search);
-
-let categoryMatch=
-currentCategory==="all"
-||
-product.category===currentCategory;
-
-return searchMatch && categoryMatch;
-
-});
+products.filter(p=>
+p.name.toLowerCase().includes(search)
+);
 
 
 if(sort==="cheap")
@@ -1346,20 +1408,19 @@ if(sort==="new")
 list.sort((a,b)=>Number(b.new)-Number(a.new));
 
 
-document
-.getElementById("productCount")
+document.getElementById("productCount")
 .textContent=
 list.length.toLocaleString("fa-IR")
 +" محصول";
 
 
-const container=
+let box=
 document.getElementById("products");
 
 
 if(!list.length){
 
-container.innerHTML=
+box.innerHTML=
 '<div class="empty">🔎 محصولی پیدا نشد.</div>';
 
 return;
@@ -1367,18 +1428,15 @@ return;
 }
 
 
-container.innerHTML=
-list.map(product=>{
+box.innerHTML=
+list.map(p=>{
 
-let favorite=
-favorites.includes(product.id);
+let fav=
+favorites.includes(p.id);
 
 let discount=
-product.oldPrice
-?
-Math.round(
-(1-product.price/product.oldPrice)*100
-)
+p.oldPrice?
+Math.round((1-p.price/p.oldPrice)*100)
 :0;
 
 
@@ -1388,17 +1446,17 @@ return `
 
 <div class="product-image">
 
-${product.icon}
+${p.icon}
 
 ${discount?
 `<span class="discount">%${discount} تخفیف</span>`
 :""}
 
 <button
-class="favorite ${favorite?"active":""}"
-onclick="toggleFavorite(${product.id})">
+class="favorite ${fav?"active":""}"
+onclick="toggleFavorite(${p.id})">
 
-${favorite?"♥":"♡"}
+${fav?"♥":"♡"}
 
 </button>
 
@@ -1406,10 +1464,10 @@ ${favorite?"♥":"♡"}
 
 <div class="info">
 
-<h3>${product.name}</h3>
+<h3>${p.name}</h3>
 
 <div class="description">
-${product.description}
+${p.description}
 </div>
 
 <div class="price-row">
@@ -1417,29 +1475,32 @@ ${product.description}
 <div>
 
 <div class="price">
-${money(product.price)}
+${money(p.price)}
 </div>
 
-${product.oldPrice?
-`<div class="old-price">${money(product.oldPrice)}</div>`
+${p.oldPrice?
+`<div class="old-price">${money(p.oldPrice)}</div>`
 :""}
 
 </div>
 
-<div class="stock ${product.stock===0?"out":""}">
-${product.stock===0?
+<div
+class="stock ${p.stock===0?"out":""}">
+
+${p.stock===0?
 "ناموجود":
-"موجودی "+product.stock}
+"موجودی "+p.stock}
+
 </div>
 
 </div>
 
 <button
 class="add"
-onclick="addToCart(${product.id})"
-${product.stock===0?"disabled":""}>
+onclick="addToCart(${p.id})"
+${p.stock===0?"disabled":""}>
 
-${product.stock===0?
+${p.stock===0?
 "ناموجود":
 "افزودن به سبد"}
 
@@ -1448,7 +1509,7 @@ ${product.stock===0?
 <button
 class="secondary"
 style="width:100%;margin-top:7px"
-onclick="openProduct(${product.id})">
+onclick="openProduct(${p.id})">
 
 مشاهده محصول
 
@@ -1465,41 +1526,21 @@ onclick="openProduct(${product.id})">
 }
 
 
-function setCategory(category,button){
-
-currentCategory=category;
-
-document
-.querySelectorAll(".category")
-.forEach(x=>x.classList.remove("active"));
-
-button.classList.add("active");
-
-renderProducts();
-
-}
-
-
-/* =========================
-   CART
-========================= */
+/* ================= CART ================= */
 
 function addToCart(id){
 
-let product=
+let p=
 products.find(x=>x.id===id);
 
-if(!product||product.stock===0)
-return;
-
+if(!p||p.stock===0)return;
 
 let item=
 cart.find(x=>x.id===id);
 
-
 if(item){
 
-if(item.quantity<product.stock)
+if(item.quantity<p.stock)
 item.quantity++;
 
 else{
@@ -1519,7 +1560,6 @@ quantity:1
 
 }
 
-
 save();
 
 toast("محصول به سبد خرید اضافه شد.");
@@ -1532,22 +1572,18 @@ function changeQuantity(id,amount){
 let item=
 cart.find(x=>x.id===id);
 
-let product=
+let p=
 products.find(x=>x.id===id);
 
 if(!item)return;
 
 item.quantity+=amount;
 
-if(item.quantity<=0){
+if(item.quantity<=0)
+cart=cart.filter(x=>x.id!==id);
 
-cart=
-cart.filter(x=>x.id!==id);
-
-}
-
-if(product&&item.quantity>product.stock)
-item.quantity=product.stock;
+if(p&&item.quantity>p.stock)
+item.quantity=p.stock;
 
 save();
 
@@ -1566,20 +1602,439 @@ save();
 
 function renderCart(){
 
-const container=
+let box=
 document.getElementById("cartItems");
 
 let total=0;
 
-let count=0;
 
+if(!cart.length){
 
-if(cart.length===0){
-
-container.innerHTML=
-'<div class="empty">🛒 سبد خرید شما خالی است.</div>';
+box.innerHTML=
+'<div class="empty">🛒 سبد خرید خالی است.</div>';
 
 }else{
 
-container.innerHTML=
-cart.m
+box.innerHTML=
+cart.map(item=>{
+
+let p=
+products.find(x=>x.id===item.id);
+
+if(!p)return "";
+
+total+=p.price*item.quantity;
+
+
+return `
+
+<div class="cart-item">
+
+<div class="cart-icon">
+${p.icon}
+</div>
+
+<div class="cart-info">
+
+<b>${p.name}</b>
+
+<small>
+${money(p.price)}
+</small>
+
+<div class="qty">
+
+<button onclick="changeQuantity(${p.id},-1)">
+−
+</button>
+
+<span>${item.quantity}</span>
+
+<button onclick="changeQuantity(${p.id},1)">
++
+</button>
+
+</div>
+
+</div>
+
+<button
+class="delete"
+onclick="removeFromCart(${p.id})">
+
+حذف
+
+</button>
+
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+document.getElementById("cartTotal")
+.textContent=
+"مجموع: "+money(total);
+
+}
+
+
+function openCart(){
+
+document.getElementById("cartDrawer")
+.classList.add("open");
+
+document.getElementById("overlay")
+.classList.add("show");
+
+}
+
+
+function closeCart(){
+
+document.getElementById("cartDrawer")
+.classList.remove("open");
+
+document.getElementById("overlay")
+.classList.remove("show");
+
+}
+
+
+/* ================= PRODUCT MODAL ================= */
+
+function openProduct(id){
+
+let p=
+products.find(x=>x.id===id);
+
+document.getElementById("bigIcon")
+.textContent=p.icon;
+
+document.getElementById("bigName")
+.textContent=p.name;
+
+document.getElementById("bigDescription")
+.textContent=p.description;
+
+document.getElementById("bigPrice")
+.textContent=money(p.price);
+
+document.getElementById("bigAdd")
+.onclick=()=>{
+addToCart(p.id);
+closeProduct();
+};
+
+document.getElementById("productModal")
+.classList.add("show");
+
+}
+
+
+function closeProduct(){
+
+document.getElementById("productModal")
+.classList.remove("show");
+
+}
+
+
+/* ================= FAVORITES ================= */
+
+function toggleFavorite(id){
+
+if(favorites.includes(id))
+favorites=favorites.filter(x=>x!==id);
+
+else
+favorites.push(id);
+
+save();
+renderProducts();
+
+}
+
+
+function showFavorites(){
+
+let list=
+products.filter(x=>favorites.includes(x.id));
+
+let box=
+document.getElementById("favoriteProducts");
+
+
+if(!list.length){
+
+box.innerHTML=
+'<div class="empty">هنوز محصولی اضافه نکردی ❤️</div>';
+
+}else{
+
+box.innerHTML=
+list.map(p=>`
+
+<div class="card">
+
+<div class="product-image">
+${p.icon}
+</div>
+
+<div class="info">
+
+<h3>${p.name}</h3>
+
+<div class="price">
+${money(p.price)}
+</div>
+
+<button
+class="add"
+onclick="addToCart(${p.id})">
+
+افزودن به سبد
+
+</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+}
+
+
+document.getElementById("favoritesModal")
+.classList.add("show");
+
+}
+
+
+function closeFavorites(){
+
+document.getElementById("favoritesModal")
+.classList.remove("show");
+
+}
+
+
+/* ================= CHECKOUT ================= */
+
+function openCheckout(){
+
+if(!cart.length){
+
+toast("سبد خرید خالی است.");
+
+return;
+
+}
+
+
+let total=0;
+
+cart.forEach(item=>{
+
+let p=
+products.find(x=>x.id===item.id);
+
+total+=p.price*item.quantity;
+
+});
+
+
+document.getElementById("orderSummary")
+.innerHTML=
+"تعداد کالا: "
++
+cart.reduce((a,b)=>a+b.quantity,0)
+.toLocaleString("fa-IR")
++
+"<br>"
++
+"مبلغ نهایی: "
++
+money(total);
+
+
+document.getElementById("checkoutModal")
+.classList.add("show");
+
+}
+
+
+function closeCheckout(){
+
+document.getElementById("checkoutModal")
+.classList.remove("show");
+
+}
+
+
+function submitOrder(){
+
+let name=
+document.getElementById("customerName")
+.value.trim();
+
+let phone=
+document.getElementById("customerPhone")
+.value.trim();
+
+let postal=
+document.getElementById("postalCode")
+.value.replace(/\D/g,"");
+
+let address=
+document.getElementById("customerAddress")
+.value.trim();
+
+
+if(!name){
+
+toast("نام را وارد کن.");
+return;
+
+}
+
+if(!phone){
+
+toast("شماره تماس را وارد کن.");
+return;
+
+}
+
+if(postal.length!==10){
+
+document.getElementById("postalError")
+.style.display="block";
+
+return;
+
+}
+
+document.getElementById("postalError")
+.style.display="none";
+
+
+if(!address){
+
+toast("آدرس را وارد کن.");
+return;
+
+}
+
+
+let orders=
+JSON.parse(
+localStorage.getItem("mahbod_orders")||"[]"
+);
+
+
+orders.push({
+
+id:Date.now(),
+
+name:name,
+
+phone:phone,
+
+postalCode:postal,
+
+address:address,
+
+note:
+document.getElementById("orderNote").value.trim(),
+
+items:cart,
+
+date:new Date().toISOString()
+
+});
+
+
+localStorage.setItem(
+"mahbod_orders",
+JSON.stringify(orders)
+);
+
+
+cart=[];
+
+save();
+
+closeCheckout();
+
+closeCart();
+
+
+document.getElementById("customerName").value="";
+document.getElementById("customerPhone").value="";
+document.getElementById("postalCode").value="";
+document.getElementById("customerAddress").value="";
+document.getElementById("orderNote").value="";
+
+
+toast("✅ سفارش با موفقیت ثبت شد.");
+
+}
+
+
+/* ================= BADGES ================= */
+
+function updateBadges(){
+
+document.getElementById("cartCount")
+.textContent=
+cart.reduce((a,b)=>a+b.quantity,0)
+.toLocaleString("fa-IR");
+
+document.getElementById("favCount")
+.textContent=
+favorites.length
+.toLocaleString("fa-IR");
+
+}
+
+
+/* ================= TOAST ================= */
+
+let toastTimer;
+
+function toast(text){
+
+let box=
+document.getElementById("toast");
+
+box.textContent=text;
+
+box.classList.add("show");
+
+clearTimeout(toastTimer);
+
+toastTimer=
+setTimeout(
+()=>box.classList.remove("show"),
+2300
+);
+
+}
+
+
+/* ================= START ================= */
+
+renderProducts();
+
+renderCart();
+
+updateBadges();
+
+</script>
+
+</body>
+</html>
