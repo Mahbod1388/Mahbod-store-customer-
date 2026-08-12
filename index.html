@@ -1,8 +1,13 @@
-<!DOCTYPE html><html lang="fa" dir="rtl">
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAHBOD STORE</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>MAHBOD STORE</title>
+
+<style>
+
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -12,17 +17,24 @@
 }
 
 :root{
-    --bg:#071321;
-    --bg2:#0a1a2c;
-    --card:#10243a;
-    --card2:#142d47;
-    --line:rgba(125,190,235,.16);
-    --blue:#3db7ff;
-    --blue2:#167dcc;
-    --gold:#d8b66a;
-    --white:#f5f9fd;
-    --muted:#91a8bd;
-    --danger:#ff6b7d;
+
+    --bg:#071521;
+    --bg2:#0b1d2d;
+
+    --panel:#10283d;
+    --panel2:#14334d;
+
+    --blue:#43bfff;
+    --blue2:#147bc1;
+
+    --gold:#d8b86a;
+
+    --text:#f5f9fc;
+    --muted:#8ea6b9;
+
+    --border:rgba(130,190,225,.15);
+
+    --danger:#ff6e80;
 }
 
 html{
@@ -30,55 +42,84 @@ html{
 }
 
 body{
+
     font-family:'Vazirmatn',Tahoma,sans-serif;
+
     background:
-        radial-gradient(circle at 10% 0%,rgba(61,183,255,.12),transparent 28%),
-        radial-gradient(circle at 90% 20%,rgba(216,182,106,.07),transparent 25%),
-        linear-gradient(145deg,#071321,#09192b 55%,#071321);
-    color:var(--white);
+        radial-gradient(
+            circle at 15% -10%,
+            rgba(67,191,255,.16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 100% 35%,
+            rgba(216,184,106,.07),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            145deg,
+            #06121e,
+            #0a1c2d 50%,
+            #071521
+        );
+
+    color:var(--text);
+
     min-height:100vh;
+
+    padding-bottom:80px;
+
 }
 
-/* BACKGROUND GLOW */
+/* =========================
+   TOP BAR
+========================= */
 
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:rgba(61,183,255,.05);
-    filter:blur(100px);
-    border-radius:50%;
-    top:20%;
-    left:-250px;
-    pointer-events:none;
-}
+.topbar{
 
-/* HEADER */
-
-header{
     position:sticky;
     top:0;
+
     z-index:100;
-    background:rgba(7,19,33,.78);
-    backdrop-filter:blur(22px);
-    border-bottom:1px solid var(--line);
+
+    height:70px;
+
+    background:rgba(7,21,33,.82);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid var(--border);
+
 }
 
-.nav{
-    max-width:1200px;
+.topbar-inner{
+
+    max-width:1180px;
+
+    height:100%;
+
     margin:auto;
-    min-height:72px;
+
     padding:0 20px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
 }
 
 .logo{
-    font-size:22px;
+
+    font-size:21px;
+
     font-weight:900;
+
     letter-spacing:-1px;
+
 }
 
 .logo span{
@@ -86,1256 +127,1812 @@ header{
 }
 
 .logo small{
-    color:var(--gold);
-    font-size:9px;
+
     display:block;
+
+    font-size:8px;
+
     letter-spacing:3px;
+
+    color:var(--gold);
+
     margin-top:-3px;
+
 }
 
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
+.cart-button{
 
-.icon-btn{
-    width:43px;
-    height:43px;
-    border-radius:13px;
-    border:1px solid var(--line);
-    background:rgba(16,36,58,.75);
+    width:45px;
+
+    height:45px;
+
+    border-radius:15px;
+
+    border:1px solid var(--border);
+
+    background:rgba(18,43,65,.8);
+
     color:white;
-    font-size:18px;
+
+    font-size:19px;
+
     cursor:pointer;
-    transition:.25s;
+
+    position:relative;
+
 }
 
-.icon-btn:hover{
-    transform:translateY(-2px);
-    border-color:var(--blue);
-    box-shadow:0 0 25px rgba(61,183,255,.15);
+.cart-count{
+
+    position:absolute;
+
+    top:-5px;
+
+    left:-5px;
+
+    width:19px;
+
+    height:19px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    color:#03101a;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    max-width:1200px;
-    margin:30px auto 0;
-    padding:0 20px;
+
+    max-width:1180px;
+
+    margin:20px auto;
+
+    padding:0 18px;
+
 }
 
 .hero-box{
-    min-height:420px;
+
+    min-height:440px;
+
     border-radius:32px;
-    border:1px solid var(--line);
+
     overflow:hidden;
+
     position:relative;
-    display:flex;
-    align-items:center;
+
+    border:1px solid var(--border);
+
     background:
-        radial-gradient(circle at 80% 40%,rgba(61,183,255,.2),transparent 30%),
-        radial-gradient(circle at 90% 80%,rgba(216,182,106,.1),transparent 25%),
-        linear-gradient(135deg,#102a44,#0b1c30 55%,#081523);
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(67,191,255,.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #12314a,
+            #0b1d2d 55%,
+            #081521
+        );
+
 }
 
 .hero-content{
-    width:58%;
-    padding:55px;
+
     position:relative;
-    z-index:2;
+
+    z-index:3;
+
+    width:60%;
+
+    padding:65px 55px;
+
 }
 
-.badge{
+.hero-tag{
+
     display:inline-flex;
+
     align-items:center;
-    gap:7px;
+
+    gap:8px;
+
     padding:7px 12px;
-    border:1px solid rgba(61,183,255,.25);
-    background:rgba(61,183,255,.08);
-    color:#8dd5ff;
-    border-radius:50px;
-    font-size:11px;
-    margin-bottom:18px;
+
+    border-radius:30px;
+
+    background:rgba(67,191,255,.08);
+
+    border:1px solid rgba(67,191,255,.2);
+
+    color:#8bd8ff;
+
+    font-size:10px;
+
+    margin-bottom:20px;
+
 }
 
-.badge i{
+.hero-tag i{
+
     width:6px;
+
     height:6px;
-    background:#4cffaa;
+
+    background:#5dffad;
+
     border-radius:50%;
-    box-shadow:0 0 10px #4cffaa;
+
+    box-shadow:0 0 10px #5dffad;
+
 }
 
 .hero h1{
-    font-size:clamp(35px,5vw,65px);
-    line-height:1.1;
+
+    font-size:clamp(38px,5vw,65px);
+
+    line-height:1.08;
+
     letter-spacing:-2px;
-    margin-bottom:20px;
+
 }
 
 .hero h1 span{
+
     color:var(--blue);
+
 }
 
 .hero p{
+
     color:var(--muted);
-    max-width:520px;
+
+    font-size:13px;
+
     line-height:2;
-    font-size:14px;
+
+    margin-top:20px;
+
+    max-width:520px;
+
 }
 
 .hero-buttons{
+
     display:flex;
+
     gap:10px;
+
     margin-top:28px;
+
 }
 
-.primary{
-    border:none;
-    padding:13px 21px;
+.btn-primary{
+
+    border:0;
+
+    padding:13px 20px;
+
     border-radius:13px;
-    color:#03111d;
+
+    background:linear-gradient(
+        135deg,
+        #61ccff,
+        #238dd0
+    );
+
+    color:#03121e;
+
     font-family:inherit;
+
     font-weight:800;
-    background:linear-gradient(135deg,#55c5ff,#248cd4);
-    box-shadow:0 12px 35px rgba(61,183,255,.18);
-    cursor:pointer;
-}
 
-.secondary{
-    padding:12px 20px;
-    border-radius:13px;
-    border:1px solid var(--line);
-    color:white;
-    background:rgba(255,255,255,.03);
-    font-family:inherit;
     cursor:pointer;
-}
 
-.hero-orb{
-    position:absolute;
-    width:330px;
-    height:330px;
-    border-radius:50%;
-    right:8%;
-    background:
-        radial-gradient(circle at 35% 30%,#8cddff,transparent 4%),
-        radial-gradient(circle,#218cd1,#0b3657 55%,transparent 70%);
-    opacity:.9;
-    filter:blur(.2px);
     box-shadow:
-        0 0 70px rgba(61,183,255,.18),
-        inset -25px -25px 60px rgba(0,0,0,.35);
+        0 12px 35px rgba(67,191,255,.15);
+
 }
 
-/* MAIN */
+.btn-secondary{
+
+    padding:12px 19px;
+
+    border-radius:13px;
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid var(--border);
+
+    color:white;
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+}
+
+.hero-glow{
+
+    position:absolute;
+
+    width:330px;
+
+    height:330px;
+
+    border-radius:50%;
+
+    right:8%;
+
+    top:55px;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #b7eaff,
+            transparent 4%
+        ),
+
+        radial-gradient(
+            circle,
+            #278dcc,
+            #0b3655 50%,
+            transparent 70%
+        );
+
+    box-shadow:
+        0 0 90px rgba(67,191,255,.16);
+
+}
+
+/* =========================
+   CONTENT
+========================= */
 
 .container{
-    max-width:1200px;
+
+    max-width:1180px;
+
     margin:auto;
-    padding:45px 20px;
+
+    padding:20px 18px;
+
 }
 
-.section-head{
-    display:flex;
-    align-items:end;
-    justify-content:space-between;
-    gap:15px;
-    margin-bottom:20px;
-}
+.section-title{
 
-.section-head h2{
-    font-size:25px;
-}
-
-.section-head p{
-    color:var(--muted);
-    font-size:12px;
-    margin-top:5px;
-}
-
-/* SEARCH */
-
-.search-box{
-    display:flex;
-    gap:10px;
     margin-bottom:18px;
+
 }
+
+.section-title h2{
+
+    font-size:25px;
+
+}
+
+.section-title p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:5px;
+
+}
+
+/* =========================
+   SEARCH
+========================= */
 
 .search{
-    flex:1;
-    padding:14px 17px;
-    border-radius:14px;
-    border:1px solid var(--line);
-    background:rgba(16,36,58,.7);
+
+    width:100%;
+
+    height:53px;
+
+    border-radius:16px;
+
+    border:1px solid var(--border);
+
+    background:rgba(16,40,61,.72);
+
     color:white;
+
+    padding:0 17px;
+
     outline:none;
+
     font-family:inherit;
+
+    font-size:13px;
+
+    margin-bottom:12px;
+
 }
 
 .search:focus{
-    border-color:var(--blue);
-    box-shadow:0 0 25px rgba(61,183,255,.08);
+
+    border-color:rgba(67,191,255,.5);
+
+    box-shadow:
+        0 0 30px rgba(67,191,255,.07);
+
 }
 
-/* FILTER */
+/* =========================
+   FILTERS
+========================= */
 
 .filters{
+
     display:flex;
-    gap:8px;
+
+    gap:7px;
+
     overflow-x:auto;
-    padding-bottom:15px;
+
+    scrollbar-width:none;
+
+    margin-bottom:22px;
+
+}
+
+.filters::-webkit-scrollbar{
+    display:none;
 }
 
 .filter{
-    white-space:nowrap;
+
+    flex-shrink:0;
+
     padding:9px 14px;
+
     border-radius:50px;
-    border:1px solid var(--line);
-    background:rgba(16,36,58,.7);
+
+    background:rgba(16,40,61,.75);
+
     color:var(--muted);
-    cursor:pointer;
+
+    border:1px solid var(--border);
+
     font-family:inherit;
+
+    cursor:pointer;
+
 }
 
 .filter.active{
-    color:#061421;
+
+    color:#03121e;
+
     background:var(--blue);
+
     border-color:var(--blue);
-    font-weight:700;
-}
 
-/* PRODUCTS */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.product{
-    background:
-        linear-gradient(145deg,rgba(20,45,71,.9),rgba(12,29,47,.95));
-    border:1px solid var(--line);
-    border-radius:22px;
-    overflow:hidden;
-    position:relative;
-    transition:.3s;
-}
-
-.product:hover{
-    transform:translateY(-7px);
-    border-color:rgba(61,183,255,.35);
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.2),
-        0 0 35px rgba(61,183,255,.07);
-}
-
-.product-image-wrap{
-    height:220px;
-    overflow:hidden;
-    position:relative;
-    background:#0a1b2c;
-}
-
-.product-image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.45s;
-    cursor:pointer;
-}
-
-.product:hover .product-image{
-    transform:scale(1.05);
-}
-
-.image-count{
-    position:absolute;
-    top:10px;
-    right:10px;
-    background:rgba(4,14,25,.75);
-    backdrop-filter:blur(8px);
-    padding:6px 9px;
-    border-radius:9px;
-    font-size:10px;
-}
-
-.product-content{
-    padding:15px;
-}
-
-.product-name{
     font-weight:800;
-    font-size:15px;
-}
-
-.product-description{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:7px;
-    min-height:34px;
-    line-height:1.7;
-}
-
-.product-bottom{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-    margin-top:13px;
-}
-
-.price{
-    color:#7dd2ff;
-    font-weight:900;
-    font-size:14px;
-}
-
-.add{
-    width:38px;
-    height:38px;
-    border-radius:12px;
-    border:none;
-    background:linear-gradient(135deg,var(--blue),var(--blue2));
-    color:#04121e;
-    font-size:20px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* FEATURES */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-    margin:50px 0;
-}
-
-.feature{
-    padding:22px;
-    border-radius:20px;
-    background:rgba(16,36,58,.55);
-    border:1px solid var(--line);
-}
-
-.feature-icon{
-    font-size:25px;
-    margin-bottom:12px;
-}
-
-.feature h3{
-    font-size:15px;
-}
-
-.feature p{
-    color:var(--muted);
-    font-size:11px;
-    line-height:1.8;
-    margin-top:5px;
-}
-
-/* CART DRAWER */
-
-.drawer{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.55);
-    backdrop-filter:blur(5px);
-    z-index:300;
-    visibility:hidden;
-    opacity:0;
-    transition:.3s;
-}
-
-.drawer.open{
-    visibility:visible;
-    opacity:1;
-}
-
-.drawer-box{
-    position:absolute;
-    right:0;
-    top:0;
-    bottom:0;
-    width:min(430px,100%);
-    background:#0b1c2e;
-    border-left:1px solid var(--line);
-    padding:20px;
-    overflow:auto;
-    transform:translateX(100%);
-    transition:.3s;
-}
-
-.drawer.open .drawer-box{
-    transform:translateX(0);
-}
-
-.drawer-head{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:15px;
-}
-
-.cart-item{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    padding:12px 0;
-    border-bottom:1px solid var(--line);
-}
-
-.cart-item img{
-    width:60px;
-    height:60px;
-    border-radius:11px;
-    object-fit:cover;
-}
-
-.cart-item-info{
-    flex:1;
-}
-
-.cart-item-info small{
-    color:var(--muted);
-}
-
-.remove{
-    border:1px solid #5c2836;
-    background:#301822;
-    color:#ff8494;
-    border-radius:9px;
-    padding:6px 9px;
-}
-
-.cart-total{
-    margin-top:20px;
-    padding-top:15px;
-    border-top:1px solid var(--line);
-    display:flex;
-    justify-content:space-between;
-    font-weight:900;
-}
-
-/* CHECKOUT */
-
-.checkout{
-    margin-top:20px;
-    display:none;
-}
-
-.checkout.show{
-    display:block;
-}
-
-.checkout h3{
-    margin-bottom:12px;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:9px;
-}
-
-.field{
-    width:100%;
-    padding:12px;
-    border-radius:11px;
-    border:1px solid var(--line);
-    background:#071523;
-    color:white;
-    outline:none;
-    font-family:inherit;
-}
-
-.field.full{
-    grid-column:1/-1;
-}
-
-textarea.field{
-    min-height:90px;
-    resize:vertical;
-}
-
-/* MODAL */
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.82);
-    backdrop-filter:blur(10px);
-    z-index:400;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:15px;
-}
-
-.modal.show{
-    display:flex;
-}
-
-.modal-box{
-    width:min(850px,100%);
-    max-height:92vh;
-    overflow:auto;
-    background:#0b1c2e;
-    border:1px solid var(--line);
-    border-radius:25px;
-    padding:16px;
-}
-
-.modal-main{
-    width:100%;
-    height:min(60vh,500px);
-    object-fit:contain;
-    background:#071523;
-    border-radius:17px;
-}
-
-.gallery{
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    padding-top:10px;
-}
-
-.gallery img{
-    width:75px;
-    height:65px;
-    object-fit:cover;
-    border-radius:10px;
-    border:2px solid transparent;
-    cursor:pointer;
-}
-
-.gallery img.active{
-    border-color:var(--blue);
-}
-
-/* CONTACT */
-
-.contact{
-    margin-top:30px;
-    border-radius:25px;
-    padding:30px;
-    border:1px solid var(--line);
-    background:
-        radial-gradient(circle at 90% 0%,rgba(61,183,255,.12),transparent 30%),
-        linear-gradient(135deg,#10253c,#0b1b2c);
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-top:20px;
-}
-
-.contact-card{
-    background:rgba(255,255,255,.03);
-    border:1px solid var(--line);
-    border-radius:15px;
-    padding:15px;
-}
-
-.contact-card span{
-    display:block;
-    color:var(--muted);
-    font-size:11px;
-    margin-top:5px;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:60px;
-    border-top:1px solid var(--line);
-    padding:30px 20px;
-    text-align:center;
-    color:var(--muted);
-    font-size:11px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-    .products{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .hero-content{
-        width:70%;
-        padding:40px;
-    }
-
-    .hero-orb{
-        right:-100px;
-        opacity:.5;
-    }
 
 }
-
-@media(max-width:650px){
-
-    .nav{
-        min-height:64px;
-    }
-
-    .hero-box{
-        min-height:430px;
-    }
-
-    .hero-content{
-        width:100%;
-        padding:30px 24px;
-        align-self:flex-end;
-    }
-
-    .hero-orb{
-        width:240px;
-        height:240px;
-        top:20px;
-        right:-60px;
-        opacity:.35;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
-    }
-
-    .product-image-wrap{
-        height:160px;
-    }
-
-    .product-content{
-        padding:11px;
-    }
-
-    .product-name{
-        font-size:13px;
-    }
-
-    .price{
-        font-size:12px;
-    }
-
-    .features{
-        grid-template-columns:1fr;
-    }
-
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .field.full{
-        grid-column:auto;
-    }
-
-    .section-head h2{
-        font-size:20px;
-    }
-
-}
-
-</style></head><body><header><div class="nav"><div class="logo">
-MAHBOD <span>STORE</span>
-<small>PREMIUM SHOP</small>
-</div><div class="nav-actions"><button class="icon-btn"
-onclick="openCart()">
-🛒
-</button>
-
-</div></div></header><section class="hero"><div class="hero-box"><div class="hero-content"><div class="badge">
-<i></i>
-فروشگاه آنلاین MAHBOD
-</div><h1>
-چیزی که می‌خواهی،
-<br>
-<span>اینجاست.</span>
-</h1><p>
-محصولات منتخب، طراحی مینیمال و تجربه خرید ساده.
-همه چیز را سریع پیدا کن و سفارش بده.
-</p><div class="hero-buttons"><button
-class="primary"
-onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">
-
-مشاهده محصولات
-
-</button><button
-class="secondary"
-onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-
-تماس با ما
-
-</button></div></div><div class="hero-orb"></div></div></section><main class="container" id="shop"><div class="section-head"><div><h2>
-محصولات منتخب
-</h2><p>
-محصول مورد نظرت را پیدا کن
-</p></div></div><div class="search-box"><input
-id="search"
-class="search"
-placeholder="🔎 جستجوی محصول..."
-oninput="renderProducts()"
-
-«»
-
-</div><div class="filters"><button class="filter active"
-onclick="setFilter('all',this)">
-همه
-</button>
-
-<button class="filter"
-onclick="setFilter('available',this)">
-موجود
-</button>
-
-<button class="filter"
-onclick="setFilter('cheap',this)">
-ارزان‌تر
-</button>
-
-<button class="filter"
-onclick="setFilter('expensive',this)">
-گران‌تر
-</button>
-
-</div><div
-id="products"
-class="products">
-</div><div class="features"><div class="feature"><div class="feature-icon">🚚</div><h3>
-ثبت سفارش آسان
-</h3><p>
-فرآیند ثبت سفارش سریع و ساده طراحی شده است.
-</p></div><div class="feature"><div class="feature-icon">🔒</div><h3>
-اطلاعات سفارش
-</h3><p>
-اطلاعات سفارش شما با ساختار منظم ثبت می‌شود.
-</p></div><div class="feature"><div class="feature-icon">💎</div><h3>
-انتخاب خاص
-</h3><p>
-محصولات منتخب با تجربه‌ای متفاوت.
-</p></div></div><section
-id="contact"
-class="contact"><h2>
-با ما در ارتباط باش
-</h2><p style="color:var(--muted);margin-top:7px;font-size:12px">اگر سوالی داری یا درباره محصولی نیاز به راهنمایی داری، با ما تماس بگیر.
-
-</p><div class="contact-grid"><div class="contact-card">📱 شماره تماس
-
-<span>
-09XXXXXXXXX
-</span></div><div class="contact-card">💬 پشتیبانی
-
-<span>
-تلگرام / واتساپ
-</span></div><div class="contact-card">🕐 ساعات پاسخگویی
-
-<span>
-هر روز 10 صبح تا 10 شب
-</span></div></div></section></main><footer>MAHBOD STORE © 2026
-
-</footer><!-- CART --><div
-id="drawer"
-class="drawer"
-onclick="closeCart(event)"
-><div
-class="drawer-box"
-onclick="event.stopPropagation()"><div class="drawer-head"><h2>
-سبد خرید
-</h2><button
-class="icon-btn"
-onclick="closeCart()">
-✕
-</button>
-
-</div><div id="cartItems"></div><div class="cart-total"><span>
-مجموع
-</span><span id="cartTotal">
-۰ تومان
-</span></div><button
-class="primary"
-style="width:100%;margin-top:15px"
-onclick="showCheckout()">
-
-ادامه و ثبت سفارش
-
-</button><div
-id="checkout"
-class="checkout"><h3>
-اطلاعات سفارش
-</h3><div class="form-grid"><input
-id="customerName"
-class="field"
-placeholder="نام و نام خانوادگی"
-
-«»
-
-<input
-id="phone"
-class="field"
-placeholder="شماره تماس"
-
-«»
-
-<input
-id="postalCode"
-class="field"
-placeholder="کد پستی"
-
-«»
-
-<input
-id="city"
-class="field"
-placeholder="شهر"
-
-«»
-
-<textarea
-id="address"
-class="field full"
-placeholder="آدرس کامل">
-</textarea><textarea
-id="note"
-class="field full"
-placeholder="توضیحات سفارش (اختیاری)">
-</textarea><button
-class="primary full"
-onclick="submitOrder()">
-
-ثبت نهایی سفارش
-
-</button></div></div></div></div><!-- GALLERY --><div
-id="modal"
-class="modal"><div class="modal-box"><button
-class="icon-btn"
-style="float:left"
-onclick="closeGallery()">
-
-✕
-
-</button><img
-id="modalMain"
-class="modal-main"
-
-«»
-
-<div
-id="modalGallery"
-class="gallery">
-</div></div></div><script>
-
-/* =========================
-   DATA
-========================= */
-
-let products =
-JSON.parse(
-localStorage.getItem("mahbod_products_v2") || "[]"
-);
-
-let cart = [];
-
-let currentFilter = "all";
-
-
-/* =========================
-   HELPERS
-========================= */
-
-function money(number){
-
-return Number(number || 0)
-.toLocaleString("fa-IR")
-+
-" تومان";
-
-}
-
-
-function esc(text){
-
-return String(text ?? "")
-.replace(/[&<>"']/g,function(c){
-
-return {
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[c];
-
-});
-
-}
-
 
 /* =========================
    PRODUCTS
 ========================= */
 
-function renderProducts(){
+.products{
 
-products =
-JSON.parse(
-localStorage.getItem("mahbod_products_v2") || "[]"
-);
+    display:grid;
 
-const search =
-document.getElementById("search")
-.value
-.toLowerCase()
-.trim();
+    grid-template-columns:
+        repeat(4,1fr);
 
-
-let list =
-products.filter(function(p){
-
-const matchesSearch =
-p.name
-.toLowerCase()
-.includes(search);
-
-
-if(!matchesSearch)
-return false;
-
-
-if(currentFilter === "available")
-return Number(p.stock) > 0;
-
-
-return true;
-
-});
-
-
-if(currentFilter === "cheap"){
-
-list.sort((a,b)=>a.price-b.price);
+    gap:16px;
 
 }
 
+.product{
 
-if(currentFilter === "expensive"){
+    overflow:hidden;
 
-list.sort((a,b)=>b.price-a.price);
+    border-radius:21px;
 
-}
+    border:1px solid var(--border);
 
+    background:
 
-const container =
-document.getElementById("products");
+        linear-gradient(
+            145deg,
+            rgba(20,51,77,.9),
+            rgba(12,31,48,.96)
+        );
 
-
-if(!list.length){
-
-container.innerHTML = `
-
-<div class="feature" style="grid-column:1/-1;text-align:center">
-
-<div style="font-size:30px">
-🔎
-</div>
-
-<h3>
-محصولی پیدا نشد
-</h3>
-
-<p>
-عبارت دیگری را امتحان کن.
-</p>
-
-</div>
-
-`;
-
-return;
+    transition:.28s;
 
 }
 
+.product:hover{
 
-container.innerHTML =
-list.map(function(p){
+    transform:translateY(-5px);
 
-const images =
-p.images || [];
-
-
-const image =
-images[0] || "";
-
-
-return `
-
-<article class="product">
-
-<div class="product-image-wrap">
-
-<img
-class="product-image"
-src="${image}"
-onclick="openGallery(${p.id})"
-onerror="this.style.opacity='.1'"
->
-
-${
-images.length > 1
-?
-`<div class="image-count">
-📷 ${images.length}
-</div>`
-:
-""
-}
-
-</div>
-
-
-<div class="product-content">
-
-<div class="product-name">
-
-${esc(p.name)}
-
-</div>
-
-
-<div class="product-description">
-
-${esc(p.desc || "محصول با کیفیت MAHBOD STORE")}
-
-</div>
-
-
-<div class="product-bottom">
-
-<div class="price">
-
-${money(p.price)}
-
-</div>
-
-
-<button
-class="add"
-onclick="addToCart(${p.id})">
-
-+
-
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-`;
-
-}).join("");
+    border-color:
+        rgba(67,191,255,.35);
 
 }
 
+.product-image{
+
+    height:230px;
+
+    background:#091a2a;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.product-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.product:hover .product-image img{
+
+    transform:scale(1.045);
+
+}
+
+.photo-count{
+
+    position:absolute;
+
+    top:10px;
+
+    right:10px;
+
+    background:rgba(2,12,20,.72);
+
+    backdrop-filter:blur(8px);
+
+    padding:5px 8px;
+
+    border-radius:8px;
+
+    font-size:9px;
+
+}
+
+.product-body{
+
+    padding:14px;
+
+}
+
+.product-name{
+
+    font-weight:800;
+
+    font-size:14px;
+
+}
+
+.product-desc{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    min-height:34px;
+
+    margin-top:5px;
+
+}
+
+.product-footer{
+
+    margin-top:13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.price{
+
+    color:#81d6ff;
+
+    font-weight:900;
+
+    font-size:13px;
+
+}
+
+.add{
+
+    width:38px;
+
+    height:38px;
+
+    border:0;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--blue2)
+        );
+
+    color:#03121e;
+
+    font-size:21px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+}
 
 /* =========================
-   FILTER
+   FEATURES
 ========================= */
 
-function setFilter(filter,button){
+.features{
 
-currentFilter = filter;
+    display:grid;
 
-document
-.querySelectorAll(".filter")
-.forEach(
-x=>x.classList.remove("active")
-);
+    grid-template-columns:
+        repeat(3,1fr);
 
-button.classList.add("active");
+    gap:13px;
 
-renderProducts();
+    margin:55px 0;
 
 }
 
+.feature{
+
+    padding:22px;
+
+    border-radius:19px;
+
+    border:1px solid var(--border);
+
+    background:
+        rgba(16,40,61,.55);
+
+}
+
+.feature-icon{
+
+    font-size:25px;
+
+    margin-bottom:10px;
+
+}
+
+.feature h3{
+
+    font-size:14px;
+
+}
+
+.feature p{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.8;
+
+    margin-top:5px;
+
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:27px;
+
+    border:1px solid var(--border);
+
+    background:
+
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(67,191,255,.15),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #12304a,
+            #0b1d2e
+        );
+
+    padding:30px;
+
+}
+
+.contact::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    left:-110px;
+
+    bottom:-130px;
+
+    background:rgba(216,184,106,.06);
+
+}
+
+.contact-head{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.contact-head h2{
+
+    font-size:23px;
+
+}
+
+.contact-head p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:6px;
+
+}
+
+.contact-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:22px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.contact-card{
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid var(--border);
+
+    transition:.25s;
+
+}
+
+.contact-card:hover{
+
+    background:rgba(67,191,255,.06);
+
+    border-color:
+        rgba(67,191,255,.25);
+
+}
+
+.contact-card .icon{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+.contact-card b{
+
+    font-size:13px;
+
+}
+
+.contact-card span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    margin-top:4px;
+
+}
+
+.contact-action{
+
+    margin-top:18px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    margin-top:50px;
+
+    border-top:1px solid var(--border);
+
+    padding:28px 18px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+}
+
+/* =========================
+   BOTTOM MOBILE NAV
+========================= */
+
+.mobile-nav{
+
+    display:none;
+
+}
 
 /* =========================
    CART
 ========================= */
 
-function addToCart(id){
+.cart-overlay{
 
-const product =
-products.find(
-p=>p.id === id
-);
+    position:fixed;
 
-if(!product)
-return;
+    inset:0;
 
+    background:rgba(0,0,0,.55);
 
-const item =
-cart.find(
-x=>x.id === id
-);
+    backdrop-filter:blur(5px);
 
+    z-index:500;
 
-if(item){
+    opacity:0;
 
-item.quantity++;
+    visibility:hidden;
 
-}else{
-
-cart.push({
-id:id,
-quantity:1
-});
+    transition:.25s;
 
 }
 
+.cart-overlay.open{
 
-renderCart();
+    opacity:1;
 
-openCart();
-
-}
-
-
-function removeFromCart(id){
-
-cart =
-cart.filter(
-x=>x.id !== id
-);
-
-renderCart();
+    visibility:visible;
 
 }
 
+.cart-panel{
 
-function renderCart(){
+    position:absolute;
 
-const box =
-document.getElementById("cartItems");
+    right:0;
+
+    top:0;
+
+    bottom:0;
+
+    width:min(430px,100%);
+
+    background:#0a1b2b;
+
+    border-left:1px solid var(--border);
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    transform:translateX(100%);
+
+    transition:.3s;
+
+}
+
+.cart-overlay.open .cart-panel{
+
+    transform:translateX(0);
+
+}
+
+.cart-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+
+}
+
+.close{
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:11px;
+
+    border:1px solid var(--border);
+
+    background:#122b43;
+
+    color:white;
+
+}
+
+.cart-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.cart-item img{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:cover;
+
+    border-radius:11px;
+
+}
+
+.cart-info{
+
+    flex:1;
+
+}
+
+.cart-info b{
+
+    font-size:12px;
+
+}
+
+.cart-info small{
+
+    color:var(--muted);
+
+}
+
+.remove{
+
+    border:1px solid rgba(255,110,128,.2);
+
+    background:rgba(255,110,128,.08);
+
+    color:#ff8998;
+
+    border-radius:8px;
+
+    padding:6px 8px;
+
+}
+
+.cart-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-top:1px solid var(--border);
+
+    margin-top:15px;
+
+    font-weight:900;
+
+}
+
+/* =========================
+   CHECKOUT
+========================= */
+
+.checkout{
+
+    display:none;
+
+}
+
+.checkout.show{
+
+    display:block;
+
+}
+
+.checkout-title{
+
+    font-size:16px;
+
+    margin:10px 0;
+
+}
+
+.form{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:8px;
+
+}
+
+.field{
+
+    width:100%;
+
+    border:1px solid var(--border);
+
+    background:#071623;
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:11px;
+
+    outline:none;
+
+    font-family:inherit;
+
+}
+
+.field:focus{
+
+    border-color:var(--blue);
+
+}
+
+.full{
+
+    grid-column:1/-1;
+
+}
+
+textarea.field{
+
+    min-height:90px;
+
+    resize:vertical;
+
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.86);
+
+    backdrop-filter:blur(12px);
+
+    z-index:700;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px;
+
+}
+
+.gallery-overlay.show{
+
+    display:flex;
+
+}
+
+.gallery-box{
+
+    width:min(800px,100%);
+
+    background:#0b1d2e;
+
+    border:1px solid var(--border);
+
+    border-radius:23px;
+
+    padding:14px;
+
+}
+
+.gallery-main{
+
+    width:100%;
+
+    height:min(65vh,520px);
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    background:#06131f;
+
+}
+
+.gallery-list{
+
+    display:flex;
+
+    gap:7px;
+
+    overflow-x:auto;
+
+    padding-top:10px;
+
+}
+
+.gallery-list img{
+
+    width:65px;
+
+    height:55px;
+
+    object-fit:cover;
+
+    border-radius:9px;
+
+    border:2px solid transparent;
+
+}
+
+.gallery-list img.active{
+
+    border-color:var(--blue);
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:950px){
+
+    .products{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+    .hero-content{
+
+        width:70%;
+
+    }
+
+}
+
+/* =========================
+   PHONE
+========================= */
+
+@media(max-width:650px){
+
+    body{
+
+        padding-bottom:70px;
+
+    }
+
+    .topbar{
+
+        height:62px;
+
+    }
+
+    .topbar-inner{
+
+        padding:0 14px;
+
+    }
+
+    .logo{
+
+        font-size:18px;
+
+    }
+
+    .hero{
+
+        margin:12px auto;
+
+        padding:0 10px;
+
+    }
+
+    .hero-box{
+
+        min-height:510px;
+
+        border-radius:25px;
+
+    }
+
+    .hero-content{
+
+        width:100%;
+
+        padding:28px 21px;
+
+        position:absolute;
+
+        bottom:0;
+
+        background:
+            linear-gradient(
+                transparent,
+                rgba(7,21,33,.95) 35%
+            );
+
+        padding-top:100px;
+
+    }
+
+    .hero-glow{
+
+        width:260px;
+
+        height:260px;
+
+        right:50%;
+
+        transform:translateX(50%);
+
+        top:25px;
+
+        opacity:.65;
+
+    }
+
+    .hero h1{
+
+        font-size:35px;
+
+        letter-spacing:-1.5px;
+
+    }
+
+    .hero p{
+
+        font-size:11px;
+
+        line-height:1.9;
+
+    }
+
+    .hero-buttons{
+
+        margin-top:20px;
+
+    }
+
+    .hero-buttons button{
+
+        flex:1;
+
+        padding:12px 8px;
+
+        font-size:11px;
+
+    }
+
+    .container{
+
+        padding:20px 12px;
+
+    }
+
+    .section-title h2{
+
+        font-size:21px;
+
+    }
+
+    .search{
+
+        height:50px;
+
+    }
+
+    .products{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:9px;
+
+    }
+
+    .product{
+
+        border-radius:17px;
+
+    }
+
+    .product-image{
+
+        height:165px;
+
+    }
+
+    .product-body{
+
+        padding:10px;
+
+    }
+
+    .product-name{
+
+        font-size:12px;
+
+    }
+
+    .product-desc{
+
+        font-size:9px;
+
+        min-height:30px;
+
+    }
+
+    .price{
+
+        font-size:10px;
+
+    }
+
+    .add{
+
+        width:34px;
+
+        height:34px;
+
+        border-radius:10px;
+
+    }
+
+    .features{
+
+        grid-template-columns:1fr;
+
+        margin:38px 0;
+
+    }
+
+    .feature{
+
+        padding:17px;
+
+    }
+
+    .contact{
+
+        padding:21px;
+
+        border-radius:21px;
+
+    }
+
+    .contact-head{
+
+        display:block;
+
+    }
+
+    .contact-head h2{
+
+        font-size:20px;
+
+    }
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+        gap:8px;
+
+    }
+
+    .contact-card{
+
+        display:flex;
+
+        align-items:center;
+
+        gap:12px;
+
+        padding:13px;
+
+    }
+
+    .contact-card .icon{
+
+        margin:0;
+
+        font-size:21px;
+
+    }
+
+    .contact-card span{
+
+        margin-top:2px;
+
+    }
+
+    .contact-action{
+
+        width:100%;
+
+    }
+
+    .contact-action button{
+
+        width:100%;
+
+    }
+
+    .mobile-nav{
+
+        position:fixed;
+
+        display:flex;
+
+        bottom:0;
+
+        left:0;
+
+        right:0;
+
+        height:67px;
+
+        background:rgba(7,19,31,.94);
+
+        backdrop-filter:blur(20px);
+
+        border-top:1px solid var(--border);
+
+        z-index:200;
+
+        justify-content:space-around;
+
+        align-items:center;
+
+    }
+
+    .mobile-nav button{
+
+        background:none;
+
+        border:0;
+
+        color:var(--muted);
+
+        font-family:inherit;
+
+        font-size:10px;
+
+    }
+
+    .mobile-nav .nav-icon{
+
+        display:block;
+
+        font-size:19px;
+
+        margin-bottom:3px;
+
+    }
+
+    .mobile-nav button.active{
+
+        color:var(--blue);
+
+    }
+
+    .form{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .full{
+
+        grid-column:auto;
+
+    }
+
+    .cart-panel{
+
+        top:auto;
+
+        width:100%;
+
+        max-height:92vh;
+
+        height:auto;
+
+        border-left:0;
+
+        border-top:1px solid var(--border);
+
+        border-radius:24px 24px 0 0;
+
+        transform:translateY(100%);
+
+    }
+
+    .cart-overlay.open .cart-panel{
+
+        transform:translateY(0);
+
+    }
+
+    .gallery-box{
+
+        border-radius:18px;
+
+    }
+
+    .gallery-main{
+
+        height:50vh;
+
+    }
+
+}
+
+</style>
+</head>
+
+<body>
 
 
-if(!cart.length){
+<!-- =========================
+     HEADER
+========================= -->
 
-box.innerHTML = `
+<header class="topbar">
 
-<div style="
-padding:25px;
-text-align:center;
-color:var(--muted)
-">
+<div class="topbar-inner">
+
+<div class="logo">
+
+MAHBOD <span>STORE</span>
+
+<small>PREMIUM SHOP</small>
+
+</div>
+
+
+<button
+class="cart-button"
+onclick="openCart()">
 
 🛒
 
-<br><br>
+<span
+id="cartCount"
+class="cart-count">
 
-سبد خرید خالی است.
+۰
 
-</div>
-
-`;
-
-}else{
-
-box.innerHTML =
-cart.map(function(item){
-
-const p =
-products.find(
-x=>x.id === item.id
-);
-
-if(!p)
-return "";
-
-
-return `
-
-<div class="cart-item">
-
-<img
-src="${p.images?.[0] || ""}"
->
-
-<div class="cart-item-info">
-
-<b>
-${esc(p.name)}
-</b>
-
-<br>
-
-<small>
-${item.quantity} عدد
-</small>
-
-<br>
-
-<strong>
-${money(p.price * item.quantity)}
-</strong>
-
-</div>
-
-<button
-class="remove"
-onclick="removeFromCart(${p.id})">
-
-حذف
+</span>
 
 </button>
 
 </div>
 
-`;
-
-}).join("");
-
-}
+</header>
 
 
-const total =
-cart.reduce(function(sum,item){
 
-const p =
-products.find(
-x=>x.id === item.id
-);
+<!-- =========================
+     HERO
+========================= -->
 
-return sum +
-(p ? p.price * item.quantity : 0);
+<section class="hero">
 
-},0);
+<div class="hero-box">
+
+<div class="hero-glow"></div>
 
 
-document
-.getElementById("cartTotal")
-.textContent =
-money(total);
+<div class="hero-content">
 
-}
+<div class="hero-tag">
+
+<i></i>
+
+فروشگاه رسمی MAHBOD
+
+</div>
 
 
-/* =========================
-   DRAWER
-========================
+<h1>
+
+انتخاب کن.
+
+<br>
+
+<span>سفارش بده.</span>
+
+</h1>
+
+
+<p>
+
+محصولات منتخب MAHBOD STORE
+را با یک تجربه خرید سریع، ساده و متفاوت پیدا کن.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<button
+class="btn-primary"
+onclick="goProducts()">
+
+مشاهده محصولات
+
+</button>
+
+
+<button
+class="btn-secondary"
+onclick="goContact()">
+
+ارتباط با ما
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<main
+id="productsSection"
+class="container">
+
+
+<div class="section-title">
+
+<h2>
+
+محصولات
+
+</h2>
+
+<p>
+
+محصول مورد نظرت را پیدا کن
+
+</p>
+
+</div>
+
+
+<input
+id="search"
+class="search"
+placeholder="🔎  جستجوی محصول..."
+oninput="renderProducts()"
+>
+
+
+<div class="filters">
+
+<button
+class="filter active"
+onclick="setFilter('all',this)">
+
+همه
+
+</button>
+
+
+<button
+class="filter"
+onclick="setFilter('available',this)">
+
+موجود
+
+</button>
+
+
+<button
+class="filter"
+onclick="setFilter('cheap',this)">
+
+ارزان‌تر
+
+</button>
+
+
+<button
+class="filter"
+onclick="setFilter('expensive',this)">
+
+گران‌تر
+
+</button>
+
+</div>
+
+
+<div
+id="products"
+class="products">
+
+</div>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+⚡
+
+</div>
+
+<h3>
+
+ثبت سفارش سریع
+
+</h3>
+
+<p>
+
+فرآیند سفارش بدون مراحل اضافی و پیچیده.
+
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+
+📦
+
+</div>
+
+<h3>
+
+اطلاعات کامل سفارش
+
+</h3>
+
+<p>
+
+نام، شماره تماس، آدرس و کد پستی هنگام سفارش ثبت می‌شود.
+
+</p>
+
+</div>
+
+
+<d
