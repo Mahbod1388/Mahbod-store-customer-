@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MAHBOD STORE</title>
 
@@ -17,24 +17,16 @@
 }
 
 :root{
-
     --bg:#071521;
     --bg2:#0b1d2d;
-
     --panel:#10283d;
     --panel2:#14334d;
-
     --blue:#43bfff;
     --blue2:#147bc1;
-
     --gold:#d8b86a;
-
     --text:#f5f9fc;
     --muted:#8ea6b9;
-
     --border:rgba(130,190,225,.15);
-
-    --danger:#ff6e80;
 }
 
 html{
@@ -42,84 +34,46 @@ html{
 }
 
 body{
-
     font-family:'Vazirmatn',Tahoma,sans-serif;
 
     background:
-        radial-gradient(
-            circle at 15% -10%,
-            rgba(67,191,255,.16),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 100% 35%,
-            rgba(216,184,106,.07),
-            transparent 25%
-        ),
-
-        linear-gradient(
-            145deg,
-            #06121e,
-            #0a1c2d 50%,
-            #071521
-        );
+        radial-gradient(circle at 15% -10%,rgba(67,191,255,.16),transparent 28%),
+        radial-gradient(circle at 100% 35%,rgba(216,184,106,.07),transparent 25%),
+        linear-gradient(145deg,#06121e,#0a1c2d 50%,#071521);
 
     color:var(--text);
-
     min-height:100vh;
-
-    padding-bottom:80px;
-
+    padding-bottom:75px;
 }
 
-/* =========================
-   TOP BAR
-========================= */
+/* HEADER */
 
 .topbar{
-
     position:sticky;
     top:0;
-
     z-index:100;
+    height:65px;
 
-    height:70px;
-
-    background:rgba(7,21,33,.82);
-
+    background:rgba(7,21,33,.85);
     backdrop-filter:blur(20px);
 
     border-bottom:1px solid var(--border);
-
 }
 
 .topbar-inner{
-
     max-width:1180px;
-
     height:100%;
-
     margin:auto;
-
-    padding:0 20px;
+    padding:0 18px;
 
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
 }
 
 .logo{
-
-    font-size:21px;
-
+    font-size:20px;
     font-weight:900;
-
-    letter-spacing:-1px;
-
 }
 
 .logo span{
@@ -127,132 +81,86 @@ body{
 }
 
 .logo small{
-
     display:block;
-
     font-size:8px;
-
     letter-spacing:3px;
-
     color:var(--gold);
-
-    margin-top:-3px;
-
 }
 
 .cart-button{
-
     width:45px;
-
     height:45px;
 
-    border-radius:15px;
+    border-radius:14px;
 
     border:1px solid var(--border);
-
     background:rgba(18,43,65,.8);
 
     color:white;
-
     font-size:19px;
 
     cursor:pointer;
 
     position:relative;
-
 }
 
 .cart-count{
-
     position:absolute;
 
     top:-5px;
-
     left:-5px;
 
     width:19px;
-
     height:19px;
 
     border-radius:50%;
 
     background:var(--blue);
-
     color:#03101a;
 
     font-size:10px;
-
     font-weight:900;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-
     max-width:1180px;
-
     margin:20px auto;
-
-    padding:0 18px;
-
+    padding:0 15px;
 }
 
 .hero-box{
+    min-height:430px;
 
-    min-height:440px;
-
-    border-radius:32px;
+    border-radius:30px;
 
     overflow:hidden;
-
     position:relative;
 
     border:1px solid var(--border);
 
     background:
-
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(67,191,255,.20),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #12314a,
-            #0b1d2d 55%,
-            #081521
-        );
-
+        radial-gradient(circle at 85% 30%,rgba(67,191,255,.20),transparent 30%),
+        linear-gradient(135deg,#12314a,#0b1d2d 55%,#081521);
 }
 
 .hero-content{
-
     position:relative;
-
     z-index:3;
 
-    width:60%;
+    width:62%;
 
     padding:65px 55px;
-
 }
 
 .hero-tag{
-
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
 
     padding:7px 12px;
@@ -260,7 +168,6 @@ body{
     border-radius:30px;
 
     background:rgba(67,191,255,.08);
-
     border:1px solid rgba(67,191,255,.2);
 
     color:#8bd8ff;
@@ -268,92 +175,64 @@ body{
     font-size:10px;
 
     margin-bottom:20px;
-
 }
 
 .hero-tag i{
-
     width:6px;
-
     height:6px;
 
     background:#5dffad;
-
     border-radius:50%;
 
     box-shadow:0 0 10px #5dffad;
-
 }
 
 .hero h1{
-
-    font-size:clamp(38px,5vw,65px);
-
+    font-size:clamp(40px,5vw,65px);
     line-height:1.08;
-
     letter-spacing:-2px;
-
 }
 
 .hero h1 span{
-
     color:var(--blue);
-
 }
 
 .hero p{
-
     color:var(--muted);
-
     font-size:13px;
-
     line-height:2;
 
     margin-top:20px;
 
     max-width:520px;
-
 }
 
 .hero-buttons{
-
     display:flex;
-
     gap:10px;
-
     margin-top:28px;
-
 }
 
 .btn-primary{
-
     border:0;
 
     padding:13px 20px;
 
     border-radius:13px;
 
-    background:linear-gradient(
-        135deg,
-        #61ccff,
-        #238dd0
-    );
+    background:linear-gradient(135deg,#61ccff,#238dd0);
 
     color:#03121e;
 
     font-family:inherit;
-
     font-weight:800;
 
     cursor:pointer;
 
-    box-shadow:
-        0 12px 35px rgba(67,191,255,.15);
-
+    box-shadow:0 12px 35px rgba(67,191,255,.15);
 }
 
 .btn-secondary{
-
     padding:12px 19px;
 
     border-radius:13px;
@@ -365,89 +244,53 @@ body{
     color:white;
 
     font-family:inherit;
-
     cursor:pointer;
-
 }
 
 .hero-glow{
-
     position:absolute;
 
     width:330px;
-
     height:330px;
 
     border-radius:50%;
 
     right:8%;
-
     top:55px;
 
     background:
+        radial-gradient(circle at 35% 30%,#b7eaff,transparent 4%),
+        radial-gradient(circle,#278dcc,#0b3655 50%,transparent 70%);
 
-        radial-gradient(
-            circle at 35% 30%,
-            #b7eaff,
-            transparent 4%
-        ),
-
-        radial-gradient(
-            circle,
-            #278dcc,
-            #0b3655 50%,
-            transparent 70%
-        );
-
-    box-shadow:
-        0 0 90px rgba(67,191,255,.16);
-
+    box-shadow:0 0 90px rgba(67,191,255,.16);
 }
 
-/* =========================
-   CONTENT
-========================= */
+/* CONTENT */
 
 .container{
-
     max-width:1180px;
-
     margin:auto;
-
-    padding:20px 18px;
-
+    padding:20px 15px;
 }
 
 .section-title{
-
     margin-bottom:18px;
-
 }
 
 .section-title h2{
-
     font-size:25px;
-
 }
 
 .section-title p{
-
     color:var(--muted);
-
     font-size:11px;
-
     margin-top:5px;
-
 }
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 .search{
-
     width:100%;
-
     height:53px;
 
     border-radius:16px;
@@ -463,30 +306,19 @@ body{
     outline:none;
 
     font-family:inherit;
-
     font-size:13px;
 
     margin-bottom:12px;
-
 }
 
 .search:focus{
-
     border-color:rgba(67,191,255,.5);
-
-    box-shadow:
-        0 0 30px rgba(67,191,255,.07);
-
 }
 
-/* =========================
-   FILTERS
-========================= */
+/* FILTER */
 
 .filters{
-
     display:flex;
-
     gap:7px;
 
     overflow-x:auto;
@@ -494,7 +326,6 @@ body{
     scrollbar-width:none;
 
     margin-bottom:22px;
-
 }
 
 .filters::-webkit-scrollbar{
@@ -502,7 +333,6 @@ body{
 }
 
 .filter{
-
     flex-shrink:0;
 
     padding:9px 14px;
@@ -518,11 +348,9 @@ body{
     font-family:inherit;
 
     cursor:pointer;
-
 }
 
 .filter.active{
-
     color:#03121e;
 
     background:var(--blue);
@@ -530,26 +358,19 @@ body{
     border-color:var(--blue);
 
     font-weight:800;
-
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 
 .products{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:16px;
-
 }
 
 .product{
-
     overflow:hidden;
 
     border-radius:21px;
@@ -557,28 +378,18 @@ body{
     border:1px solid var(--border);
 
     background:
-
-        linear-gradient(
-            145deg,
-            rgba(20,51,77,.9),
-            rgba(12,31,48,.96)
-        );
+        linear-gradient(145deg,rgba(20,51,77,.9),rgba(12,31,48,.96));
 
     transition:.28s;
-
 }
 
 .product:hover{
-
     transform:translateY(-5px);
 
-    border-color:
-        rgba(67,191,255,.35);
-
+    border-color:rgba(67,191,255,.35);
 }
 
 .product-image{
-
     height:230px;
 
     background:#091a2a;
@@ -586,13 +397,10 @@ body{
     position:relative;
 
     overflow:hidden;
-
 }
 
 .product-image img{
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -600,21 +408,16 @@ body{
     cursor:pointer;
 
     transition:.4s;
-
 }
 
 .product:hover .product-image img{
-
     transform:scale(1.045);
-
 }
 
 .photo-count{
-
     position:absolute;
 
     top:10px;
-
     right:10px;
 
     background:rgba(2,12,20,.72);
@@ -626,25 +429,18 @@ body{
     border-radius:8px;
 
     font-size:9px;
-
 }
 
 .product-body{
-
     padding:14px;
-
 }
 
 .product-name{
-
     font-weight:800;
-
     font-size:14px;
-
 }
 
 .product-desc{
-
     color:var(--muted);
 
     font-size:10px;
@@ -654,11 +450,9 @@ body{
     min-height:34px;
 
     margin-top:5px;
-
 }
 
 .product-footer{
-
     margin-top:13px;
 
     display:flex;
@@ -666,92 +460,66 @@ body{
     align-items:center;
 
     justify-content:space-between;
-
 }
 
 .price{
-
     color:#81d6ff;
 
     font-weight:900;
 
     font-size:13px;
-
 }
 
 .add{
-
     width:38px;
-
     height:38px;
 
     border:0;
 
     border-radius:12px;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--blue2)
-        );
+    background:linear-gradient(135deg,var(--blue),var(--blue2));
 
     color:#03121e;
 
     font-size:21px;
-
     font-weight:900;
 
     cursor:pointer;
-
 }
 
-/* =========================
-   FEATURES
-========================= */
+/* FEATURES */
 
 .features{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:13px;
 
     margin:55px 0;
-
 }
 
 .feature{
-
     padding:22px;
 
     border-radius:19px;
 
     border:1px solid var(--border);
 
-    background:
-        rgba(16,40,61,.55);
-
+    background:rgba(16,40,61,.55);
 }
 
 .feature-icon{
-
     font-size:25px;
-
     margin-bottom:10px;
-
 }
 
 .feature h3{
-
     font-size:14px;
-
 }
 
 .feature p{
-
     color:var(--muted);
 
     font-size:10px;
@@ -759,15 +527,11 @@ body{
     line-height:1.8;
 
     margin-top:5px;
-
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact{
-
     position:relative;
 
     overflow:hidden;
@@ -777,94 +541,43 @@ body{
     border:1px solid var(--border);
 
     background:
-
-        radial-gradient(
-            circle at 90% 0%,
-            rgba(67,191,255,.15),
-            transparent 32%
-        ),
-
-        linear-gradient(
-            135deg,
-            #12304a,
-            #0b1d2e
-        );
+        radial-gradient(circle at 90% 0%,rgba(67,191,255,.15),transparent 32%),
+        linear-gradient(135deg,#12304a,#0b1d2e);
 
     padding:30px;
-
-}
-
-.contact::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:220px;
-
-    height:220px;
-
-    border-radius:50%;
-
-    left:-110px;
-
-    bottom:-130px;
-
-    background:rgba(216,184,106,.06);
-
 }
 
 .contact-head{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
     position:relative;
-
     z-index:2;
-
 }
 
 .contact-head h2{
-
     font-size:23px;
-
 }
 
 .contact-head p{
-
     color:var(--muted);
 
     font-size:11px;
 
     margin-top:6px;
-
 }
 
 .contact-grid{
-
     display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:10px;
 
     margin-top:22px;
 
     position:relative;
-
     z-index:2;
-
 }
 
 .contact-card{
-
     padding:18px;
 
     border-radius:16px;
@@ -874,34 +587,22 @@ body{
     border:1px solid var(--border);
 
     transition:.25s;
-
 }
 
 .contact-card:hover{
-
     background:rgba(67,191,255,.06);
-
-    border-color:
-        rgba(67,191,255,.25);
-
 }
 
 .contact-card .icon{
-
     font-size:22px;
-
     margin-bottom:10px;
-
 }
 
 .contact-card b{
-
     font-size:13px;
-
 }
 
 .contact-card span{
-
     display:block;
 
     color:var(--muted);
@@ -909,25 +610,15 @@ body{
     font-size:10px;
 
     margin-top:4px;
-
 }
 
 .contact-action{
-
     margin-top:18px;
-
-    position:relative;
-
-    z-index:2;
-
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-
     margin-top:50px;
 
     border-top:1px solid var(--border);
@@ -939,25 +630,17 @@ footer{
     color:var(--muted);
 
     font-size:10px;
-
 }
 
-/* =========================
-   BOTTOM MOBILE NAV
-========================= */
+/* MOBILE NAV */
 
 .mobile-nav{
-
     display:none;
-
 }
 
-/* =========================
-   CART
-========================= */
+/* CART */
 
 .cart-overlay{
-
     position:fixed;
 
     inset:0;
@@ -969,29 +652,21 @@ footer{
     z-index:500;
 
     opacity:0;
-
     visibility:hidden;
 
     transition:.25s;
-
 }
 
 .cart-overlay.open{
-
     opacity:1;
-
     visibility:visible;
-
 }
 
 .cart-panel{
-
     position:absolute;
 
     right:0;
-
     top:0;
-
     bottom:0;
 
     width:min(430px,100%);
@@ -1007,17 +682,13 @@ footer{
     transform:translateX(100%);
 
     transition:.3s;
-
 }
 
 .cart-overlay.open .cart-panel{
-
     transform:translateX(0);
-
 }
 
 .cart-header{
-
     display:flex;
 
     align-items:center;
@@ -1025,13 +696,10 @@ footer{
     justify-content:space-between;
 
     margin-bottom:15px;
-
 }
 
 .close{
-
     width:38px;
-
     height:38px;
 
     border-radius:11px;
@@ -1041,11 +709,9 @@ footer{
     background:#122b43;
 
     color:white;
-
 }
 
 .cart-item{
-
     display:flex;
 
     align-items:center;
@@ -1055,41 +721,30 @@ footer{
     padding:12px 0;
 
     border-bottom:1px solid var(--border);
-
 }
 
 .cart-item img{
-
     width:58px;
-
     height:58px;
 
     object-fit:cover;
 
     border-radius:11px;
-
 }
 
 .cart-info{
-
     flex:1;
-
 }
 
 .cart-info b{
-
     font-size:12px;
-
 }
 
 .cart-info small{
-
     color:var(--muted);
-
 }
 
 .remove{
-
     border:1px solid rgba(255,110,128,.2);
 
     background:rgba(255,110,128,.08);
@@ -1099,11 +754,9 @@ footer{
     border-radius:8px;
 
     padding:6px 8px;
-
 }
 
 .cart-total{
-
     display:flex;
 
     justify-content:space-between;
@@ -1115,46 +768,32 @@ footer{
     margin-top:15px;
 
     font-weight:900;
-
 }
 
-/* =========================
-   CHECKOUT
-========================= */
+/* CHECKOUT */
 
 .checkout{
-
     display:none;
-
 }
 
 .checkout.show{
-
     display:block;
-
 }
 
 .checkout-title{
-
     font-size:16px;
-
     margin:10px 0;
-
 }
 
 .form{
-
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:8px;
-
 }
 
 .field{
-
     width:100%;
 
     border:1px solid var(--border);
@@ -1170,35 +809,24 @@ footer{
     outline:none;
 
     font-family:inherit;
-
 }
 
 .field:focus{
-
     border-color:var(--blue);
-
 }
 
 .full{
-
     grid-column:1/-1;
-
 }
 
 textarea.field{
-
     min-height:90px;
-
     resize:vertical;
-
 }
 
-/* =========================
-   GALLERY
-========================= */
+/* GALLERY */
 
 .gallery-overlay{
-
     position:fixed;
 
     inset:0;
@@ -1212,21 +840,16 @@ textarea.field{
     display:none;
 
     align-items:center;
-
     justify-content:center;
 
     padding:15px;
-
 }
 
 .gallery-overlay.show{
-
     display:flex;
-
 }
 
 .gallery-box{
-
     width:min(800px,100%);
 
     background:#0b1d2e;
@@ -1236,11 +859,9 @@ textarea.field{
     border-radius:23px;
 
     padding:14px;
-
 }
 
 .gallery-main{
-
     width:100%;
 
     height:min(65vh,520px);
@@ -1250,11 +871,9 @@ textarea.field{
     border-radius:15px;
 
     background:#06131f;
-
 }
 
 .gallery-list{
-
     display:flex;
 
     gap:7px;
@@ -1262,13 +881,10 @@ textarea.field{
     overflow-x:auto;
 
     padding-top:10px;
-
 }
 
 .gallery-list img{
-
     width:65px;
-
     height:55px;
 
     object-fit:cover;
@@ -1276,84 +892,57 @@ textarea.field{
     border-radius:9px;
 
     border:2px solid transparent;
-
 }
 
 .gallery-list img.active{
-
     border-color:var(--blue);
-
 }
 
-/* =========================
-   TABLET
-========================= */
+/* TABLET */
 
 @media(max-width:950px){
 
     .products{
-
-        grid-template-columns:
-            repeat(3,1fr);
-
+        grid-template-columns:repeat(3,1fr);
     }
 
     .hero-content{
-
         width:70%;
-
     }
 
 }
 
-/* =========================
-   PHONE
-========================= */
+/* PHONE */
 
 @media(max-width:650px){
 
     body{
-
         padding-bottom:70px;
-
     }
 
     .topbar{
-
         height:62px;
-
     }
 
     .topbar-inner{
-
         padding:0 14px;
-
     }
 
     .logo{
-
         font-size:18px;
-
     }
 
     .hero{
-
         margin:12px auto;
-
         padding:0 10px;
-
     }
 
     .hero-box{
-
         min-height:510px;
-
         border-radius:25px;
-
     }
 
     .hero-content{
-
         width:100%;
 
         padding:28px 21px;
@@ -1369,13 +958,10 @@ textarea.field{
             );
 
         padding-top:100px;
-
     }
 
     .hero-glow{
-
         width:260px;
-
         height:260px;
 
         right:50%;
@@ -1385,160 +971,100 @@ textarea.field{
         top:25px;
 
         opacity:.65;
-
     }
 
     .hero h1{
-
         font-size:35px;
-
         letter-spacing:-1.5px;
-
     }
 
     .hero p{
-
         font-size:11px;
-
         line-height:1.9;
-
     }
 
     .hero-buttons{
-
         margin-top:20px;
-
     }
 
     .hero-buttons button{
-
         flex:1;
-
         padding:12px 8px;
-
         font-size:11px;
-
     }
 
     .container{
-
         padding:20px 12px;
-
     }
 
     .section-title h2{
-
         font-size:21px;
-
     }
 
     .search{
-
         height:50px;
-
     }
 
     .products{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
         gap:9px;
-
     }
 
     .product{
-
         border-radius:17px;
-
     }
 
     .product-image{
-
         height:165px;
-
     }
 
     .product-body{
-
         padding:10px;
-
     }
 
     .product-name{
-
         font-size:12px;
-
     }
 
     .product-desc{
-
         font-size:9px;
-
         min-height:30px;
-
     }
 
     .price{
-
         font-size:10px;
-
     }
 
     .add{
-
         width:34px;
-
         height:34px;
-
         border-radius:10px;
-
     }
 
     .features{
-
         grid-template-columns:1fr;
-
         margin:38px 0;
-
     }
 
     .feature{
-
         padding:17px;
-
     }
 
     .contact{
-
         padding:21px;
-
         border-radius:21px;
-
-    }
-
-    .contact-head{
-
-        display:block;
-
     }
 
     .contact-head h2{
-
         font-size:20px;
-
     }
 
     .contact-grid{
-
         grid-template-columns:1fr;
-
         gap:8px;
-
     }
 
     .contact-card{
-
         display:flex;
 
         align-items:center;
@@ -1546,45 +1072,28 @@ textarea.field{
         gap:12px;
 
         padding:13px;
-
     }
 
     .contact-card .icon{
-
         margin:0;
-
         font-size:21px;
-
     }
 
     .contact-card span{
-
         margin-top:2px;
-
-    }
-
-    .contact-action{
-
-        width:100%;
-
     }
 
     .contact-action button{
-
         width:100%;
-
     }
 
     .mobile-nav{
-
         position:fixed;
 
         display:flex;
 
         bottom:0;
-
         left:0;
-
         right:0;
 
         height:67px;
@@ -1600,59 +1109,44 @@ textarea.field{
         justify-content:space-around;
 
         align-items:center;
-
     }
 
     .mobile-nav button{
-
         background:none;
-
         border:0;
 
         color:var(--muted);
 
         font-family:inherit;
-
         font-size:10px;
-
     }
 
     .mobile-nav .nav-icon{
-
         display:block;
 
         font-size:19px;
 
         margin-bottom:3px;
-
     }
 
     .mobile-nav button.active{
-
         color:var(--blue);
-
     }
 
     .form{
-
         grid-template-columns:1fr;
-
     }
 
     .full{
-
         grid-column:auto;
-
     }
 
     .cart-panel{
-
         top:auto;
 
         width:100%;
 
         max-height:92vh;
-
         height:auto;
 
         border-left:0;
@@ -1662,25 +1156,18 @@ textarea.field{
         border-radius:24px 24px 0 0;
 
         transform:translateY(100%);
-
     }
 
     .cart-overlay.open .cart-panel{
-
         transform:translateY(0);
-
     }
 
     .gallery-box{
-
         border-radius:18px;
-
     }
 
     .gallery-main{
-
         height:50vh;
-
     }
 
 }
@@ -1688,12 +1175,11 @@ textarea.field{
 </style>
 </head>
 
+
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header class="topbar">
 
@@ -1730,16 +1216,13 @@ class="cart-count">
 
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
 <div class="hero-box">
 
 <div class="hero-glow"></div>
-
 
 <div class="hero-content">
 
@@ -1800,9 +1283,7 @@ onclick="goContact()">
 
 
 
-<!-- =========================
-     PRODUCTS
-========================= -->
+<!-- PRODUCTS -->
 
 <main
 id="productsSection"
@@ -1812,15 +1293,11 @@ class="container">
 <div class="section-title">
 
 <h2>
-
 محصولات
-
 </h2>
 
 <p>
-
 محصول مورد نظرت را پیدا کن
-
 </p>
 
 </div>
@@ -1882,9 +1359,7 @@ class="products">
 
 
 
-<!-- =========================
-     FEATURES
-========================= -->
+<!-- FEATURES -->
 
 <section class="features">
 
@@ -1892,21 +1367,15 @@ class="products">
 <div class="feature">
 
 <div class="feature-icon">
-
 ⚡
-
 </div>
 
 <h3>
-
 ثبت سفارش سریع
-
 </h3>
 
 <p>
-
 فرآیند سفارش بدون مراحل اضافی و پیچیده.
-
 </p>
 
 </div>
@@ -1915,24 +1384,358 @@ class="products">
 <div class="feature">
 
 <div class="feature-icon">
-
 📦
-
 </div>
 
 <h3>
-
 اطلاعات کامل سفارش
-
 </h3>
 
 <p>
-
 نام، شماره تماس، آدرس و کد پستی هنگام سفارش ثبت می‌شود.
-
 </p>
 
 </div>
 
 
-<d
+<div class="feature">
+
+<div class="feature-icon">
+💎
+</div>
+
+<h3>
+MAHBOD STYLE
+</h3>
+
+<p>
+طراحی شده برای یک تجربه خرید متفاوت و حرفه‌ای.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section
+id="contact"
+class="contact">
+
+
+<div class="contact-head">
+
+<h2>
+با ما حرف بزن 👋
+</h2>
+
+<p>
+سؤالی داری؟ ما اینجاییم.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<div class="icon">
+📱
+</div>
+
+<div>
+
+<b>
+تماس تلفنی
+</b>
+
+<span>
+09XXXXXXXXX
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">
+💬
+</div>
+
+<div>
+
+<b>
+پشتیبانی
+</b>
+
+<span>
+تلگرام / واتساپ
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">
+🕐
+</div>
+
+<div>
+
+<b>
+ساعات پاسخگویی
+</b>
+
+<span>
+هر روز 10 صبح تا 10 شب
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="contact-action">
+
+<button
+class="btn-primary"
+onclick="alert('اطلاعات تماس را از پنل مدیریت تنظیم کنید.')">
+
+تماس با پشتیبانی
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<footer>
+
+MAHBOD STORE © 2026
+
+<br><br>
+
+Made with style.
+
+</footer>
+
+
+
+<!-- MOBILE NAV -->
+
+<nav class="mobile-nav">
+
+<button
+class="active"
+onclick="goProducts()">
+
+<span class="nav-icon">⌂</span>
+
+خانه
+
+</button>
+
+
+<button
+onclick="goProducts()">
+
+<span class="nav-icon">🛍️</span>
+
+محصولات
+
+</button>
+
+
+<button
+onclick="openCart()">
+
+<span class="nav-icon">🛒</span>
+
+سبد خرید
+
+</button>
+
+
+<button
+onclick="goContact()">
+
+<span class="nav-icon">☎</span>
+
+تماس
+
+</button>
+
+</nav>
+
+
+
+<!-- CART -->
+
+<div
+id="cartOverlay"
+class="cart-overlay"
+onclick="closeCart(event)">
+
+
+<div
+class="cart-panel"
+onclick="event.stopPropagation()">
+
+
+<div class="cart-header">
+
+<h2>
+سبد خرید
+</h2>
+
+<button
+class="close"
+onclick="closeCart()">
+
+✕
+
+</button>
+
+</div>
+
+
+<div id="cartItems"></div>
+
+
+<div class="cart-total">
+
+<span>
+مجموع
+</span>
+
+<strong id="cartTotal">
+۰ تومان
+</strong>
+
+</div>
+
+
+<button
+class="btn-primary"
+style="width:100%"
+onclick="showCheckout()">
+
+ادامه ثبت سفارش
+
+</button>
+
+
+
+<div
+id="checkout"
+class="checkout">
+
+
+<h3 class="checkout-title">
+
+اطلاعات تحویل
+
+</h3>
+
+
+<div class="form">
+
+
+<input
+id="customerName"
+class="field"
+placeholder="نام و نام خانوادگی"
+>
+
+
+<input
+id="phone"
+class="field"
+placeholder="شماره تماس"
+>
+
+
+<input
+id="city"
+class="field"
+placeholder="شهر"
+>
+
+
+<input
+id="postalCode"
+class="field"
+placeholder="کد پستی"
+>
+
+
+<textarea
+id="address"
+class="field full"
+placeholder="آدرس کامل"></textarea>
+
+
+<textarea
+id="note"
+class="field full"
+placeholder="توضیحات سفارش (اختیاری)"></textarea>
+
+
+<button
+class="btn-primary full"
+onclick="submitOrder()">
+
+ثبت نهایی سفارش
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- GALLERY -->
+
+<div
+id="galleryOverlay"
+class="gallery-overlay">
+
+
+<div class="gallery-box">
+
+
+<button
+class="close"
+style="float:left"
+onclick="closeGallery()">
+
+✕
+
+</button>
+
+
+<img
+id="galleryMain"
+    
